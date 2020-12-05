@@ -82,7 +82,7 @@ void HandleBACK7(reg *myreg){
         myreg->rIP += 8;
         myreg->rL += 1;
     }
-    myreg->rIP -= 7;
+    myreg->rIP -= 6;
     myreg->rL -= 1;
     rts.handles[*myreg->rIP](myreg);
 }
