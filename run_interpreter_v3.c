@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "generator/gen.h"
 #include "interpreter/reg.h"
-#include "interpreter/interpreter_v2.h"
+#include "interpreter/interpreter_v3.h"
 
 int main(int argc, char *argv[]){
     int size = 10000;
@@ -53,7 +53,7 @@ int main(int argc, char *argv[]){
     myreg.rIP = buf;
 
     init(buf, size, prob, seed, &myreg.rA, &myreg.rL);
-    interpreter_v2(buf, size, &myreg);
+    interpreter_v3(buf, size, &myreg);
     
     free(buf);
     return 0;

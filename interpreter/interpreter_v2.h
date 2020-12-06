@@ -3,6 +3,6 @@
 #define __INTERPRETER_V2_H_ 
 #include "reg.h"
 
-void interpreter_goto(char *, int, reg *);
+void interpreter_v2(char *, int, reg *);
 
 #endif  /* __INTERPRETER_V2_H_  */

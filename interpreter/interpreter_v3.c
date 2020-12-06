@@ -1,44 +1,32 @@
-// interpreter_v1.c
-#include "interpreter_v1.h"
+// interpreter_v3.c
+#include "interpreter_v3.h"
+#include "predecoder.h"
 
-void interpreter_v1(char *buf, int size, reg *myreg){
+void interpreter_v3(char *buf, int size, reg *myreg){
+    char *routine; 
+    int TPC = 0;    // for myPT
+    int SPC = 0;    // for buf
+    static void *ins[] = { &&HALT, &&CLRA, &&INC3A, &&DECA, &&SETL, &&BACK7 };
+    // printf("&&HALT: %p\n", &&HALT);
+    // printf("&&CLRA: %p\n", &&CLRA);
+    // printf("&&INC3A: %p\n", &&INC3A);
+    // printf("&&DECA: %p\n", &&DECA);
+    // printf("&&SETL: %p\n", &&SETL);
+    // printf("&&BACK7: %p\n", &&BACK7);
+    struct preTable *myPT = (struct preTable *) malloc(size * sizeof(struct preTable));
+    predecoding(buf, size, ins, myPT, 0);
+    char inst = *(buf);
     myreg->rIP = buf;
-    char inst = *(myreg->rIP);
-    int opcode = inst;
+    // int opcode1 = myPT->op1;
+    // int opcode2 = myPT->op2;
+    // int opcode3 = myPT->op3;
+    routine = myPT[TPC].routine;
+    goto *routine;
 
-    while (inst){
-        switch(opcode) {
-            case 1:
-                HandleCLRA(myreg);
-                break;
-            case 2:
-                HandleINC3A(myreg);
-                break;
-            case 3:
-                HandleDECA(myreg);
-                break;
-            case 4:
-                HandleSETL(myreg);
-                break;
-            case 5:
-                HandleBACK7(myreg);
-                break;
-            default:
-                break;
-        }
-        inst = *(myreg->rIP);
-        opcode = inst;
-    }
-}
-
-void HandleHALT(reg *myreg){
-    // printf("opcode 0: stop execution\n");
-    // exit(0);
-}
-
-void HandleCLRA(reg *myreg){
+CLRA:
     // printf("opcode 1: set content of register A to 0\n");
-    struct routines rts = {{&HandleHALT, &HandleCLRA, &HandleINC3A, &HandleDECA, &HandleSETL, &HandleBACK7}};
+    TPC += 1;
+    SPC += 1;
     myreg->rIP += 1;
     // operation
     myreg->rA = 0;
@@ -50,12 +38,13 @@ void HandleCLRA(reg *myreg){
     // printf("    myreg.rL: %d\n", myreg->rL);
     // printf("    TPC: %d\n", TPC);
     // printf("    SPC: %d\n", SPC);
-    // rts.handles[*myreg->rIP](myreg);
-}
-
-void HandleINC3A(reg *myreg){
+    routine = myPT[TPC].routine;
+    goto *routine;
+ 
+INC3A:
     // printf("opcode 2: increment register A by 3\n");
-    struct routines rts = {{&HandleHALT, &HandleCLRA, &HandleINC3A, &HandleDECA, &HandleSETL, &HandleBACK7}};
+    TPC += 1;
+    SPC += 1;
     myreg->rIP += 1;
     // operation
     myreg->rA += 3;
@@ -67,12 +56,13 @@ void HandleINC3A(reg *myreg){
     // printf("    myreg.rL: %d\n", myreg->rL);
     // printf("    TPC: %d\n", TPC);
     // printf("    SPC: %d\n", SPC);
-    // rts.handles[*myreg->rIP](myreg);
-}
+    routine = myPT[TPC].routine;
+    goto *routine;
 
-void HandleDECA(reg *myreg){
+DECA:
     // printf("opcode 3: decrement register A by 1\n");
-    struct routines rts = {{&HandleHALT, &HandleCLRA, &HandleINC3A, &HandleDECA, &HandleSETL, &HandleBACK7}};
+    TPC += 1;
+    SPC += 1;
     myreg->rIP += 1;
     // operation
     myreg->rA -=1;
@@ -84,16 +74,16 @@ void HandleDECA(reg *myreg){
     // printf("    myreg.rL: %d\n", myreg->rL);
     // printf("    TPC: %d\n", TPC);
     // printf("    SPC: %d\n", SPC);
-    // rts.handles[*myreg->rIP](myreg);
-}
+    routine = myPT[TPC].routine;
+    goto *routine;
 
-void HandleSETL(reg *myreg){
+SETL:
     // printf("opcode 4: copy value of register A to L\n");
-    struct routines rts = {{&HandleHALT, &HandleCLRA, &HandleINC3A, &HandleDECA, &HandleSETL, &HandleBACK7}};
+    TPC += 1;
+    SPC += 1;
     myreg->rIP += 1;
     // operation
     myreg->rL = myreg->rA;
-    // operation
     // printf("    myreg address: %p\n", myreg);
     // printf("    myreg.rIP address: %p\n", myreg->rIP);
     // printf("    myreg.rIP's target value: %d\n", *myreg->rIP);
@@ -101,22 +91,21 @@ void HandleSETL(reg *myreg){
     // printf("    myreg.rL: %d\n", myreg->rL);
     // printf("    TPC: %d\n", TPC);
     // printf("    SPC: %d\n", SPC);
-    // rts.handles[*myreg->rIP](myreg);
-}
-
-void HandleBACK7(reg *myreg){
-    // printf("opcode 5: decrement L; if value of L is positive, jump back by 7instructions (i.e. loop body is6one-byte instructions and the BACK7itself). Otherwise fall through to next instruction\n");
-    // printf("    After interpreter, myreg: %d\n", myreg);
-    // printf("    After interpreter, myreg.rIP: %d\n", *myreg->rIP);
-    // printf("    After interpreter, myreg.rA: %d\n", myreg->rA);
-    // printf("    After interpreter, myreg.rL: %d\n", myreg->rL);
-    struct routines rts = {{&HandleHALT, &HandleCLRA, &HandleINC3A, &HandleDECA, &HandleSETL, &HandleBACK7}};
+    routine = myPT[TPC].routine;
+    goto *routine;
+                
+BACK7:
+    // printf("opcode 5: decrement L; if value of L is positive, jump back by 7 instructions (i.e. loop body is 6 one-byte instructions and the BACK7 itself). Otherwise fall through to next instruction\n");
     if(myreg->rL <= 0) {
+        TPC += 7;
+        SPC += 7;
         myreg->rIP += 7;
         // operation
         myreg->rL += 1;
         // operation
     }
+    TPC -= 6;
+    SPC -= 6;
     myreg->rIP -= 6;
     // operation
     myreg->rL -= 1;
@@ -128,5 +117,11 @@ void HandleBACK7(reg *myreg){
     // printf("    myreg.rL: %d\n", myreg->rL);
     // printf("    TPC: %d\n", TPC);
     // printf("    SPC: %d\n", SPC);
-    // rts.handles[*myreg->rIP](myreg);
+    routine = myPT[TPC].routine;
+    goto *routine;
+
+HALT:
+    // printf("opcode 0: stop execution\n");
+    ;
+    free(myPT);
 }

@@ -7,6 +7,9 @@
 #include "interpreter/reg.h"
 #include "interpreter/interpreter_v1.h"
 #include "interpreter/interpreter_v2.h"
+#include "interpreter/interpreter_v3.h"
+#include "interpreter/interpreter_v4.h"
+#include "interpreter/predecoder.h"
 
 struct timespec diff(struct timespec, struct timespec);
 
@@ -15,9 +18,6 @@ int main(int argc, char *argv[]){
     int size = 10000;
     int seed = 1;
     int prob[5] = {1,0,0,0,0};
-
-    printf("\n");
-    printf("Before case, prob: %d %d %d %d %d\n", prob[0], prob[1], prob[2], prob[3], prob[4]);
 
     if (argc-1)
         switch (*argv[1]){
@@ -55,69 +55,80 @@ int main(int argc, char *argv[]){
                 ;
         }
 
-    printf("After switch-case, size: %d\n", size);
-    printf("After switch-case, seed: %d\n", seed);
-    printf("After switch-case, prob: %d %d %d %d %d\n", prob[0], prob[1], prob[2], prob[3], prob[4]);
+
+    printf("size: %d\n", size);
+    printf("seed: %d\n", seed);
+    printf("prob: %d %d %d %d %d\n", prob[0], prob[1], prob[2], prob[3], prob[4]);
 
     char *buf = (char *) malloc(size * sizeof(char));
     init(buf, size, prob, seed, &myreg.rA, &myreg.rL);
+    myreg.rIP = buf;
 
-    printf("\n");
+    struct reg myreg1 = myreg; 
+    struct reg myreg2 = myreg; 
+    struct reg myreg3 = myreg; 
+    struct reg myreg4 = myreg; 
+
     printf("After init, myreg.rA: %d\n", myreg.rA);
     printf("After init, myreg.rL: %d\n", myreg.rL);
     printf("\n");
 
-    myreg.rIP = buf;
-    char inst = *(myreg.rIP);
-    int opcode = inst;
-    // struct routines rts = {{&HandleHALT, &HandleCLRA, &HandleINC3A, &HandleDECA, &HandleSETL, &HandleBACK7}};
-
-    // ###### My Test Data ######
-    char test[10];
-    int i;
-    for(i=0; i<10; i++){
-        test[i] = 2;
-    }
-    test[7]=5;
-    test[9]=0;
+    // ############ My Test Data ############
+    // char test[10];
+    // int i;
+    // for(i=0; i<10; i++){
+    //     test[i] = 2;
+    // }
+    // test[7]=5;
+    // test[9]=0;
     // myreg.rIP = test;
     // rts.handles[*myreg.rIP](&myreg);
     // interpreter(test, size, &myreg);
-    // ###### My Test Data ######
+    // ############ My Test Data ############
 
-    clock_t c_start, c_end;
-    double cpu_time_used;
-    c_start = clock();
+    // ############ My Clock Time Test ############
+    // clock_t c_start, c_end;
+    // double cpu_time_used;
+    // c_start = clock();
+    // interpreter_v1(buf, size, &myreg1);
+    // interpreter_v2(buf, size, &myreg2);
+    // interpreter_v3(buf, size, &myreg3);
+    // interpreter_v4(buf, size, &myreg4);
+    // c_end = clock();
+    // cpu_time_used = ((double) (c_end - c_start)) / CLOCKS_PER_SEC;
 
-    // interpreter_v1(buf, size, &myreg);
-    interpreter_goto(buf, size, &myreg);
-    // interpreter_goto(test, size, &myreg);
+    // struct timespec start, end;
+    // double time_used;
+    // clock_gettime(CLOCK_MONOTONIC, &start);
+    // interpreter_v1(buf, size, &myreg1);
+    // interpreter_v2(buf, size, &myreg2);
+    // interpreter_v3(buf, size, &myreg3);
+    // interpreter_v4(buf, size, &myreg4);
+    // clock_gettime(CLOCK_MONOTONIC, &end);
+    // struct timespec temp = diff(start, end);
+    // time_used = temp.tv_sec + (double) temp.tv_nsec / 1000000000.0;
+    // printf("Total Clocks = %ld\n", c_end-c_start);
+    // printf("Total Clocks/CLOCKS_PER_SEC = %f\n", cpu_time_used);
+    // printf("Total wall-clock Time (CLOCK_MONOTONIC) = %f\n", time_used);
+    // printf("\n");
+    // ############ My Clock Time Test ############
 
-    c_end = clock();
-    cpu_time_used = ((double) (c_end - c_start)) / CLOCKS_PER_SEC;
+    interpreter_v1(buf, size, &myreg1);
+    interpreter_v2(buf, size, &myreg2);
+    interpreter_v3(buf, size, &myreg3);
+    interpreter_v4(buf, size, &myreg4);
 
-    struct timespec start, end;
-    double time_used;
-    clock_gettime(CLOCK_MONOTONIC, &start);
-
-    // interpreter_v1(buf, size, &myreg);
-    interpreter_goto(buf, size, &myreg);
-    // interpreter_goto(test, size, &myreg);
-
-    clock_gettime(CLOCK_MONOTONIC, &end);
-    struct timespec temp = diff(start, end);
-    time_used = temp.tv_sec + (double) temp.tv_nsec / 1000000000.0;
-
-    // printf("buf: %d\n", *buf);
-    // printf("inst: %c\n", inst);
-    // printf("opcode: %d\n", opcode);
-
-    printf("After interpreter, myreg.rA: %d\n", myreg.rA);
-    printf("After interpreter, myreg.rL: %d\n", myreg.rL);
+    printf("interpreter_v1, myreg.rA: %d\n", myreg1.rA);
+    printf("interpreter_v1, myreg.rL: %d\n", myreg1.rL);
     printf("\n");
-    printf("Total Clocks = %ld\n", c_end-c_start);
-    printf("Total Clocks/CLOCKS_PER_SEC = %f\n", cpu_time_used);
-    printf("Total wall-clock Time (CLOCK_MONOTONIC) = %f\n", time_used);
+    printf("interpreter_v2, myreg.rA: %d\n", myreg2.rA);
+    printf("interpreter_v2, myreg.rL: %d\n", myreg2.rL);
+    printf("\n");
+    printf("interpreter_v3, myreg.rA: %d\n", myreg3.rA);
+    printf("interpreter_v3, myreg.rL: %d\n", myreg3.rL);
+    printf("\n");
+    printf("interpreter_v4, myreg.rA: %d\n", myreg4.rA);
+    printf("interpreter_v4, myreg.rL: %d\n", myreg4.rL);
     printf("\n");
 
     free(buf);
