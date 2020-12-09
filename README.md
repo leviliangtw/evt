@@ -18,552 +18,592 @@
 
 ## Senario 1
 ### size 10000, seed 1, probabilities 0/1/0/0/0
+interpreter_v1,Total wall-clock Time (CLOCK_MONOTONIC) = 0.057203 msec <br>
+interpreter_v2,Total wall-clock Time (CLOCK_MONOTONIC) = 0.021345 msec <br>
+interpreter_v3,Total wall-clock Time (CLOCK_MONOTONIC) = 0.040188 msec <br>
+interpreter_v4,Total wall-clock Time (CLOCK_MONOTONIC) = 0.041322 msec <br>
+ <br>
  Performance counter stats for './run_interpreter_v1.out 1' (1000 runs):
 
-             10.64 msec task-clock                #    0.966 CPUs utilized            ( +-  1.11% )
-                 1      context-switches          #    0.113 K/sec                    ( +-  2.69% )
-                 0      cpu-migrations            #    0.002 K/sec                    ( +- 22.15% )
-                27      page-faults               #    0.003 M/sec                    ( +-  0.06% )
-        27,171,132      cycles                    #    2.554 GHz                      ( +-  0.19% )
-            84,307      stalled-cycles-frontend   #    0.31% frontend cycles idle     ( +-  0.80% )
-        13,734,575      stalled-cycles-backend    #   50.55% backend cycles idle      ( +-  0.08% )
-        66,997,638      instructions              #    2.47  insn per cycle         
-                                                  #    0.21  stalled cycles per insn  ( +-  0.00% )
-         8,277,741      branches                  #  778.137 M/sec                    ( +-  0.00% )
-            22,854      branch-misses             #    0.28% of all branches          ( +-  0.13% )
+              0.53 msec task-clock                #    0.671 CPUs utilized            ( +-  0.45% )
+                 0      context-switches          #    0.123 K/sec                    ( +- 16.63% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                27      page-faults               #    0.052 M/sec                    ( +-  0.06% )
+           812,686      cycles                    #    1.542 GHz                      ( +-  0.20% )
+            15,764      stalled-cycles-frontend   #    1.94% frontend cycles idle     ( +-  0.66% )
+           310,158      stalled-cycles-backend    #   38.16% backend cycles idle      ( +-  0.24% )
+         1,609,978      instructions              #    1.98  insn per cycle         
+                                                  #    0.19  stalled cycles per insn  ( +-  0.04% )
+           249,996      branches                  #  474.453 M/sec                    ( +-  0.05% )
+             1,228      branch-misses             #    0.49% of all branches          ( +-  1.03% )
 
-          0.011014 +- 0.000121 seconds time elapsed  ( +-  1.10% )
+        0.00078527 +- 0.00000412 seconds time elapsed  ( +-  0.53% )
 
 
  Performance counter stats for './run_interpreter_v2.out 1' (1000 runs):
 
-              5.65 msec task-clock                #    0.946 CPUs utilized            ( +-  1.40% )
-                 0      context-switches          #    0.088 K/sec                    ( +-  4.09% )
-                 0      cpu-migrations            #    0.002 K/sec                    ( +- 31.48% )
-                27      page-faults               #    0.005 M/sec                    ( +-  0.06% )
-        12,647,101      cycles                    #    2.240 GHz                      ( +-  0.10% )
-            63,487      stalled-cycles-frontend   #    0.50% frontend cycles idle     ( +-  0.73% )
-         7,011,963      stalled-cycles-backend    #   55.44% backend cycles idle      ( +-  0.14% )
-        25,663,354      instructions              #    2.03  insn per cycle         
-                                                  #    0.27  stalled cycles per insn  ( +-  0.00% )
-         2,650,196      branches                  #  469.298 M/sec                    ( +-  0.00% )
-            22,499      branch-misses             #    0.85% of all branches          ( +-  0.14% )
+              0.44 msec task-clock                #    0.633 CPUs utilized            ( +-  0.47% )
+                 0      context-switches          #    0.114 K/sec                    ( +- 20.36% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                27      page-faults               #    0.062 M/sec                    ( +-  0.06% )
+           686,413      cycles                    #    1.559 GHz                      ( +-  0.20% )
+            15,434      stalled-cycles-frontend   #    2.25% frontend cycles idle     ( +-  0.69% )
+           263,941      stalled-cycles-backend    #   38.45% backend cycles idle      ( +-  0.34% )
+         1,239,827      instructions              #    1.81  insn per cycle         
+                                                  #    0.21  stalled cycles per insn  ( +-  0.05% )
+           199,978      branches                  #  454.096 M/sec                    ( +-  0.06% )
+             1,205      branch-misses             #    0.60% of all branches          ( +-  1.04% )
 
-         0.0059693 +- 0.0000820 seconds time elapsed  ( +-  1.37% )
+        0.00069552 +- 0.00000383 seconds time elapsed  ( +-  0.55% )
 
 
  Performance counter stats for './run_interpreter_v3.out 1' (1000 runs):
 
-              5.33 msec task-clock                #    0.941 CPUs utilized            ( +-  1.37% )
-                 1      context-switches          #    0.104 K/sec                    ( +-  4.56% )
-                 0      cpu-migrations            #    0.001 K/sec                    ( +- 57.68% )
-                67      page-faults               #    0.013 M/sec                    ( +-  0.02% )
-        11,476,099      cycles                    #    2.153 GHz                      ( +-  0.07% )
-            64,161      stalled-cycles-frontend   #    0.56% frontend cycles idle     ( +-  0.71% )
-         5,775,589      stalled-cycles-backend    #   50.33% backend cycles idle      ( +-  0.19% )
-        29,360,688      instructions              #    2.56  insn per cycle         
-                                                  #    0.20  stalled cycles per insn  ( +-  0.00% )
-         2,683,081      branches                  #  503.419 M/sec                    ( +-  0.00% )
-            22,790      branch-misses             #    0.85% of all branches          ( +-  0.13% )
+              0.57 msec task-clock                #    0.683 CPUs utilized            ( +-  0.46% )
+                 0      context-switches          #    0.130 K/sec                    ( +- 15.21% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                67      page-faults               #    0.118 M/sec                    ( +-  0.02% )
+           887,554      cycles                    #    1.555 GHz                      ( +-  0.21% )
+            17,181      stalled-cycles-frontend   #    1.94% frontend cycles idle     ( +-  0.78% )
+           398,989      stalled-cycles-backend    #   44.95% backend cycles idle      ( +-  0.24% )
+         1,612,070      instructions              #    1.82  insn per cycle         
+                                                  #    0.25  stalled cycles per insn  ( +-  0.04% )
+           232,835      branches                  #  407.972 M/sec                    ( +-  0.05% )
+             1,395      branch-misses             #    0.60% of all branches          ( +-  0.92% )
 
-         0.0056619 +- 0.0000761 seconds time elapsed  ( +-  1.34% )
+        0.00083549 +- 0.00000804 seconds time elapsed  ( +-  0.96% )
 
 
  Performance counter stats for './run_interpreter_v4.out 1' (1000 runs):
 
-              4.66 msec task-clock                #    0.937 CPUs utilized            ( +-  1.35% )
-                 0      context-switches          #    0.104 K/sec                    ( +-  4.75% )
-                 0      cpu-migrations            #    0.002 K/sec                    ( +- 35.23% )
-                67      page-faults               #    0.014 M/sec                    ( +-  0.02% )
-        10,519,642      cycles                    #    2.255 GHz                      ( +-  0.12% )
-            73,408      stalled-cycles-frontend   #    0.70% frontend cycles idle     ( +-  1.04% )
-         4,843,879      stalled-cycles-backend    #   46.05% backend cycles idle      ( +-  0.34% )
-        26,284,153      instructions              #    2.50  insn per cycle         
-                                                  #    0.18  stalled cycles per insn  ( +-  0.00% )
-         2,459,144      branches                  #  527.237 M/sec                    ( +-  0.00% )
-            26,708      branch-misses             #    1.09% of all branches          ( +-  0.11% )
+              0.56 msec task-clock                #    0.685 CPUs utilized            ( +-  0.52% )
+                 0      context-switches          #    0.117 K/sec                    ( +- 17.06% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                67      page-faults               #    0.121 M/sec                    ( +-  0.02% )
+           904,330      cycles                    #    1.624 GHz                      ( +-  0.26% )
+            18,515      stalled-cycles-frontend   #    2.05% frontend cycles idle     ( +-  0.92% )
+           373,824      stalled-cycles-backend    #   41.34% backend cycles idle      ( +-  0.35% )
+         1,802,233      instructions              #    1.99  insn per cycle         
+                                                  #    0.21  stalled cycles per insn  ( +-  0.04% )
+           272,841      branches                  #  489.914 M/sec                    ( +-  0.04% )
+             1,511      branch-misses             #    0.55% of all branches          ( +-  1.02% )
 
-         0.0049765 +- 0.0000656 seconds time elapsed  ( +-  1.32% )
+        0.00081297 +- 0.00000476 seconds time elapsed  ( +-  0.59% )
 
 ## Senario 2
 ### size 10000, seed 1, probabilities 1/1/1/0/0
+interpreter_v1,Total wall-clock Time (CLOCK_MONOTONIC) = 0.136192 msec <br>
+interpreter_v2,Total wall-clock Time (CLOCK_MONOTONIC) = 0.079500 msec <br>
+interpreter_v3,Total wall-clock Time (CLOCK_MONOTONIC) = 0.071782 msec <br>
+interpreter_v4,Total wall-clock Time (CLOCK_MONOTONIC) = 0.080822 msec <br>
+ <br>
  Performance counter stats for './run_interpreter_v1.out 2' (1000 runs):
 
-              2.05 msec task-clock                #    0.864 CPUs utilized            ( +-  0.41% )
-                 0      context-switches          #    0.061 K/sec                    ( +-  8.52% )
-                 0      cpu-migrations            #    0.000 K/sec                  
-                27      page-faults               #    0.013 M/sec                    ( +-  0.06% )
-         2,994,341      cycles                    #    1.460 GHz                      ( +-  0.06% )
-            46,920      stalled-cycles-frontend   #    1.57% frontend cycles idle     ( +-  0.28% )
-           419,183      stalled-cycles-backend    #   14.00% backend cycles idle      ( +-  0.39% )
-         3,763,056      instructions              #    1.26  insn per cycle         
-                                                  #    0.11  stalled cycles per insn  ( +-  0.01% )
-           617,579      branches                  #  301.215 M/sec                    ( +-  0.01% )
-            28,917      branch-misses             #    4.68% of all branches          ( +-  0.05% )
+              1.02 msec task-clock                #    0.788 CPUs utilized            ( +-  0.42% )
+                 0      context-switches          #    0.100 K/sec                    ( +-  9.79% )
+                 0      cpu-migrations            #    0.001 K/sec                    ( +-100.00% )
+                27      page-faults               #    0.027 M/sec                    ( +-  0.06% )
+         1,535,068      cycles                    #    1.507 GHz                      ( +-  0.09% )
+            29,442      stalled-cycles-frontend   #    1.92% frontend cycles idle     ( +-  0.46% )
+           167,172      stalled-cycles-backend    #   10.89% backend cycles idle      ( +-  0.28% )
+         1,600,606      instructions              #    1.04  insn per cycle         
+                                                  #    0.10  stalled cycles per insn  ( +-  0.01% )
+           250,172      branches                  #  245.594 M/sec                    ( +-  0.01% )
+            14,746      branch-misses             #    5.89% of all branches          ( +-  0.09% )
 
-        0.00237420 +- 0.00000902 seconds time elapsed  ( +-  0.38% )
+        0.00129296 +- 0.00000542 seconds time elapsed  ( +-  0.42% )
 
 
  Performance counter stats for './run_interpreter_v2.out 2' (1000 runs):
 
-              1.87 msec task-clock                #    0.853 CPUs utilized            ( +-  0.40% )
-                 0      context-switches          #    0.066 K/sec                    ( +-  8.56% )
-                 0      cpu-migrations            #    0.001 K/sec                    ( +-100.00% )
-                27      page-faults               #    0.015 M/sec                    ( +-  0.06% )
-         2,772,331      cycles                    #    1.480 GHz                      ( +-  0.06% )
-            46,599      stalled-cycles-frontend   #    1.68% frontend cycles idle     ( +-  0.26% )
-           430,667      stalled-cycles-backend    #   15.53% backend cycles idle      ( +-  0.36% )
-         3,343,175      instructions              #    1.21  insn per cycle         
-                                                  #    0.13  stalled cycles per insn  ( +-  0.01% )
-           558,380      branches                  #  298.050 M/sec                    ( +-  0.01% )
-            29,146      branch-misses             #    5.22% of all branches          ( +-  0.04% )
+              0.85 msec task-clock                #    0.763 CPUs utilized            ( +-  0.50% )
+                 0      context-switches          #    0.126 K/sec                    ( +- 10.49% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                27      page-faults               #    0.032 M/sec                    ( +-  0.06% )
+         1,351,034      cycles                    #    1.581 GHz                      ( +-  0.16% )
+            31,067      stalled-cycles-frontend   #    2.30% frontend cycles idle     ( +-  0.68% )
+           203,286      stalled-cycles-backend    #   15.05% backend cycles idle      ( +-  0.33% )
+         1,231,205      instructions              #    0.91  insn per cycle         
+                                                  #    0.17  stalled cycles per insn  ( +-  0.02% )
+           196,936      branches                  #  230.474 M/sec                    ( +-  0.02% )
+            14,841      branch-misses             #    7.54% of all branches          ( +-  0.10% )
 
-        0.00219595 +- 0.00000822 seconds time elapsed  ( +-  0.37% )
+        0.00112056 +- 0.00000539 seconds time elapsed  ( +-  0.48% )
 
 
  Performance counter stats for './run_interpreter_v3.out 2' (1000 runs):
 
-              1.80 msec task-clock                #    0.856 CPUs utilized            ( +-  0.72% )
-                 0      context-switches          #    0.064 K/sec                    ( +-  8.99% )
+              0.93 msec task-clock                #    0.774 CPUs utilized            ( +-  0.44% )
+                 0      context-switches          #    0.137 K/sec                    ( +-  9.48% )
                  0      cpu-migrations            #    0.000 K/sec                  
-                67      page-faults               #    0.037 M/sec                    ( +-  0.02% )
-         2,842,182      cycles                    #    1.577 GHz                      ( +-  0.10% )
-            50,002      stalled-cycles-frontend   #    1.76% frontend cycles idle     ( +-  0.44% )
-           472,490      stalled-cycles-backend    #   16.62% backend cycles idle      ( +-  0.38% )
-         3,727,262      instructions              #    1.31  insn per cycle         
-                                                  #    0.13  stalled cycles per insn  ( +-  0.01% )
-           591,249      branches                  #  328.067 M/sec                    ( +-  0.01% )
-            29,255      branch-misses             #    4.95% of all branches          ( +-  0.05% )
+                67      page-faults               #    0.073 M/sec                    ( +-  0.02% )
+         1,416,997      cycles                    #    1.528 GHz                      ( +-  0.14% )
+            31,899      stalled-cycles-frontend   #    2.25% frontend cycles idle     ( +-  0.56% )
+           268,022      stalled-cycles-backend    #   18.91% backend cycles idle      ( +-  0.22% )
+         1,603,774      instructions              #    1.13  insn per cycle         
+                                                  #    0.17  stalled cycles per insn  ( +-  0.01% )
+           229,820      branches                  #  247.884 M/sec                    ( +-  0.02% )
+            15,089      branch-misses             #    6.57% of all branches          ( +-  0.10% )
 
-         0.0021064 +- 0.0000146 seconds time elapsed  ( +-  0.69% )
+        0.00119802 +- 0.00000511 seconds time elapsed  ( +-  0.43% )
 
 
  Performance counter stats for './run_interpreter_v4.out 2' (1000 runs):
 
-              1.87 msec task-clock                #    0.855 CPUs utilized            ( +-  0.55% )
-                 0      context-switches          #    0.075 K/sec                    ( +-  7.81% )
-                 0      cpu-migrations            #    0.001 K/sec                    ( +- 70.68% )
-                67      page-faults               #    0.036 M/sec                    ( +-  0.02% )
-         2,904,298      cycles                    #    1.553 GHz                      ( +-  0.09% )
-            52,462      stalled-cycles-frontend   #    1.81% frontend cycles idle     ( +-  0.35% )
-           428,697      stalled-cycles-backend    #   14.76% backend cycles idle      ( +-  0.42% )
-         3,812,030      instructions              #    1.31  insn per cycle         
-                                                  #    0.11  stalled cycles per insn  ( +-  0.01% )
-           605,236      branches                  #  323.672 M/sec                    ( +-  0.01% )
-            31,637      branch-misses             #    5.23% of all branches          ( +-  0.05% )
+              1.04 msec task-clock                #    0.788 CPUs utilized            ( +-  0.43% )
+                 0      context-switches          #    0.116 K/sec                    ( +-  8.61% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                67      page-faults               #    0.065 M/sec                    ( +-  0.02% )
+         1,495,620      cycles                    #    1.437 GHz                      ( +-  0.11% )
+            34,498      stalled-cycles-frontend   #    2.31% frontend cycles idle     ( +-  0.37% )
+           220,423      stalled-cycles-backend    #   14.74% backend cycles idle      ( +-  0.29% )
+         1,684,365      instructions              #    1.13  insn per cycle         
+                                                  #    0.13  stalled cycles per insn  ( +-  0.01% )
+           245,185      branches                  #  235.515 M/sec                    ( +-  0.01% )
+            18,466      branch-misses             #    7.53% of all branches          ( +-  0.08% )
 
-         0.0021859 +- 0.0000115 seconds time elapsed  ( +-  0.52% )
+        0.00132198 +- 0.00000527 seconds time elapsed  ( +-  0.40% )
 
 ## Senario 3
 ### size 10000, seed 1, probabilities 1/9/1/5/5
+interpreter_v1,Total wall-clock Time (CLOCK_MONOTONIC) = 3.982712 msec <br>
+interpreter_v2,Total wall-clock Time (CLOCK_MONOTONIC) = 1.815932 msec <br>
+interpreter_v3,Total wall-clock Time (CLOCK_MONOTONIC) = 1.552551 msec <br>
+interpreter_v4,Total wall-clock Time (CLOCK_MONOTONIC) = 1.513960 msec <br>
+ <br>
  Performance counter stats for './run_interpreter_v1.out 3' (1000 runs):
 
-             11.02 msec task-clock                #    0.966 CPUs utilized            ( +-  1.09% )
-                 1      context-switches          #    0.105 K/sec                    ( +-  2.25% )
-                 0      cpu-migrations            #    0.002 K/sec                    ( +- 24.06% )
+             11.36 msec task-clock                #    0.962 CPUs utilized            ( +-  0.46% )
+                 1      context-switches          #    0.113 K/sec                    ( +-  1.36% )
+                 0      cpu-migrations            #    0.000 K/sec                    ( +-100.00% )
                 27      page-faults               #    0.002 M/sec                    ( +-  0.06% )
-        26,844,105      cycles                    #    2.436 GHz                      ( +-  0.14% )
-            81,361      stalled-cycles-frontend   #    0.30% frontend cycles idle     ( +-  0.67% )
-        13,777,907      stalled-cycles-backend    #   51.33% backend cycles idle      ( +-  0.06% )
-        66,996,226      instructions              #    2.50  insn per cycle         
-                                                  #    0.21  stalled cycles per insn  ( +-  0.00% )
-         8,277,383      branches                  #  751.288 M/sec                    ( +-  0.00% )
-            22,769      branch-misses             #    0.28% of all branches          ( +-  0.13% )
+        19,128,265      cycles                    #    1.684 GHz                      ( +-  0.03% )
+            65,402      stalled-cycles-frontend   #    0.34% frontend cycles idle     ( +-  0.55% )
+         7,977,679      stalled-cycles-backend    #   41.71% backend cycles idle      ( +-  0.04% )
+        47,065,100      instructions              #    2.46  insn per cycle         
+                                                  #    0.17  stalled cycles per insn  ( +-  0.00% )
+         5,859,645      branches                  #  515.798 M/sec                    ( +-  0.00% )
+            23,373      branch-misses             #    0.40% of all branches          ( +-  0.05% )
 
-          0.011408 +- 0.000124 seconds time elapsed  ( +-  1.08% )
+         0.0118075 +- 0.0000537 seconds time elapsed  ( +-  0.45% )
 
 
  Performance counter stats for './run_interpreter_v2.out 3' (1000 runs):
 
-              7.87 msec task-clock                #    0.947 CPUs utilized            ( +-  0.71% )
-                 1      context-switches          #    0.085 K/sec                    ( +-  2.79% )
-                 0      cpu-migrations            #    0.001 K/sec                    ( +- 44.63% )
-                27      page-faults               #    0.003 M/sec                    ( +-  0.06% )
-        12,566,148      cycles                    #    1.597 GHz                      ( +-  0.05% )
-            59,653      stalled-cycles-frontend   #    0.47% frontend cycles idle     ( +-  0.62% )
-         7,077,130      stalled-cycles-backend    #   56.32% backend cycles idle      ( +-  0.06% )
-        25,666,824      instructions              #    2.04  insn per cycle         
-                                                  #    0.28  stalled cycles per insn  ( +-  0.00% )
-         2,650,849      branches                  #  336.943 M/sec                    ( +-  0.00% )
-            23,099      branch-misses             #    0.87% of all branches          ( +-  0.09% )
+              5.24 msec task-clock                #    0.933 CPUs utilized            ( +-  0.93% )
+                 0      context-switches          #    0.084 K/sec                    ( +-  3.69% )
+                 0      cpu-migrations            #    0.000 K/sec                    ( +-100.00% )
+                27      page-faults               #    0.005 M/sec                    ( +-  0.06% )
+         9,262,865      cycles                    #    1.768 GHz                      ( +-  0.04% )
+            48,057      stalled-cycles-frontend   #    0.52% frontend cycles idle     ( +-  0.51% )
+         4,563,810      stalled-cycles-backend    #   49.27% backend cycles idle      ( +-  0.05% )
+        18,255,819      instructions              #    1.97  insn per cycle         
+                                                  #    0.25  stalled cycles per insn  ( +-  0.00% )
+         1,888,677      branches                  #  360.402 M/sec                    ( +-  0.00% )
+            22,491      branch-misses             #    1.19% of all branches          ( +-  0.11% )
 
-         0.0083067 +- 0.0000576 seconds time elapsed  ( +-  0.69% )
+         0.0056143 +- 0.0000502 seconds time elapsed  ( +-  0.90% )
 
 
  Performance counter stats for './run_interpreter_v3.out 3' (1000 runs):
 
-              7.06 msec task-clock                #    0.943 CPUs utilized            ( +-  0.78% )
-                 1      context-switches          #    0.073 K/sec                    ( +-  3.48% )
-                 0      cpu-migrations            #    0.001 K/sec                    ( +- 49.92% )
-                67      page-faults               #    0.010 M/sec                    ( +-  0.02% )
-        11,382,968      cycles                    #    1.613 GHz                      ( +-  0.04% )
-            59,994      stalled-cycles-frontend   #    0.53% frontend cycles idle     ( +-  0.63% )
-         5,807,705      stalled-cycles-backend    #   51.02% backend cycles idle      ( +-  0.10% )
-        29,362,206      instructions              #    2.58  insn per cycle         
+              4.57 msec task-clock                #    0.928 CPUs utilized            ( +-  1.04% )
+                 0      context-switches          #    0.104 K/sec                    ( +-  4.62% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                67      page-faults               #    0.015 M/sec                    ( +-  0.02% )
+         8,547,632      cycles                    #    1.870 GHz                      ( +-  0.08% )
+            56,300      stalled-cycles-frontend   #    0.66% frontend cycles idle     ( +-  1.00% )
+         4,109,383      stalled-cycles-backend    #   48.08% backend cycles idle      ( +-  0.14% )
+        20,938,117      instructions              #    2.45  insn per cycle         
                                                   #    0.20  stalled cycles per insn  ( +-  0.00% )
-         2,683,284      branches                  #  380.326 M/sec                    ( +-  0.00% )
-            23,293      branch-misses             #    0.87% of all branches          ( +-  0.10% )
+         1,921,616      branches                  #  420.407 M/sec                    ( +-  0.00% )
+            22,834      branch-misses             #    1.19% of all branches          ( +-  0.10% )
 
-         0.0074787 +- 0.0000569 seconds time elapsed  ( +-  0.76% )
+         0.0049229 +- 0.0000498 seconds time elapsed  ( +-  1.01% )
 
 
  Performance counter stats for './run_interpreter_v4.out 3' (1000 runs):
 
-              5.98 msec task-clock                #    0.937 CPUs utilized            ( +-  0.91% )
-                 1      context-switches          #    0.085 K/sec                    ( +-  3.45% )
-                 0      cpu-migrations            #    0.000 K/sec                    ( +- 70.68% )
-                67      page-faults               #    0.011 M/sec                    ( +-  0.02% )
-        10,363,841      cycles                    #    1.733 GHz                      ( +-  0.05% )
-            62,800      stalled-cycles-frontend   #    0.61% frontend cycles idle     ( +-  0.57% )
-         4,951,091      stalled-cycles-backend    #   47.77% backend cycles idle      ( +-  0.10% )
-        26,284,439      instructions              #    2.54  insn per cycle         
-                                                  #    0.19  stalled cycles per insn  ( +-  0.00% )
-         2,459,138      branches                  #  411.253 M/sec                    ( +-  0.00% )
-            26,974      branch-misses             #    1.10% of all branches          ( +-  0.10% )
+              3.95 msec task-clock                #    0.929 CPUs utilized            ( +-  1.28% )
+                 0      context-switches          #    0.126 K/sec                    ( +-  4.98% )
+                 0      cpu-migrations            #    0.001 K/sec                    ( +- 57.68% )
+                67      page-faults               #    0.017 M/sec                    ( +-  0.02% )
+         8,390,415      cycles                    #    2.124 GHz                      ( +-  0.09% )
+            61,408      stalled-cycles-frontend   #    0.73% frontend cycles idle     ( +-  0.79% )
+         3,994,311      stalled-cycles-backend    #   47.61% backend cycles idle      ( +-  0.14% )
+        20,234,157      instructions              #    2.41  insn per cycle         
+                                                  #    0.20  stalled cycles per insn  ( +-  0.00% )
+         1,909,437      branches                  #  483.377 M/sec                    ( +-  0.00% )
+            26,572      branch-misses             #    1.39% of all branches          ( +-  0.10% )
 
-         0.0063783 +- 0.0000560 seconds time elapsed  ( +-  0.88% )
+         0.0042515 +- 0.0000534 seconds time elapsed  ( +-  1.26% )
 
 ## Senario 4
 ### size 10000, seed 2, probabilities 1/9/1/5/5
+interpreter_v1,Total wall-clock Time (CLOCK_MONOTONIC) = 2.234600 msec <br>
+interpreter_v2,Total wall-clock Time (CLOCK_MONOTONIC) = 0.983687 msec <br>
+interpreter_v3,Total wall-clock Time (CLOCK_MONOTONIC) = 0.867829 msec <br>
+interpreter_v4,Total wall-clock Time (CLOCK_MONOTONIC) = 0.820779 msec <br>
+ <br>
  Performance counter stats for './run_interpreter_v1.out 4' (1000 runs):
 
-              5.66 msec task-clock                #    0.943 CPUs utilized            ( +-  1.26% )
-                 1      context-switches          #    0.100 K/sec                    ( +-  4.58% )
-                 0      cpu-migrations            #    0.001 K/sec                    ( +- 35.23% )
+              5.39 msec task-clock                #    0.944 CPUs utilized            ( +-  1.33% )
+                 1      context-switches          #    0.098 K/sec                    ( +-  4.26% )
+                 0      cpu-migrations            #    0.001 K/sec                    ( +- 57.68% )
                 27      page-faults               #    0.005 M/sec                    ( +-  0.06% )
-        11,466,421      cycles                    #    2.025 GHz                      ( +-  0.15% )
-            58,984      stalled-cycles-frontend   #    0.51% frontend cycles idle     ( +-  0.64% )
-         5,422,134      stalled-cycles-backend    #   47.29% backend cycles idle      ( +-  0.11% )
-        26,626,938      instructions              #    2.32  insn per cycle         
-                                                  #    0.20  stalled cycles per insn  ( +-  0.00% )
-         3,343,953      branches                  #  590.623 M/sec                    ( +-  0.00% )
-            22,593      branch-misses             #    0.68% of all branches          ( +-  0.12% )
+        11,506,499      cycles                    #    2.136 GHz                      ( +-  0.11% )
+            65,788      stalled-cycles-frontend   #    0.57% frontend cycles idle     ( +-  1.21% )
+         4,416,736      stalled-cycles-backend    #   38.38% backend cycles idle      ( +-  0.09% )
+        26,623,733      instructions              #    2.31  insn per cycle         
+                                                  #    0.17  stalled cycles per insn  ( +-  0.00% )
+         3,343,402      branches                  #  620.594 M/sec                    ( +-  0.00% )
+            22,525      branch-misses             #    0.67% of all branches          ( +-  0.12% )
 
-         0.0060050 +- 0.0000741 seconds time elapsed  ( +-  1.23% )
+         0.0057077 +- 0.0000747 seconds time elapsed  ( +-  1.31% )
 
 
  Performance counter stats for './run_interpreter_v2.out 4' (1000 runs):
 
-              3.49 msec task-clock                #    0.909 CPUs utilized            ( +-  0.69% )
-                 0      context-switches          #    0.083 K/sec                    ( +-  5.29% )
-                 0      cpu-migrations            #    0.000 K/sec                    ( +-100.00% )
-                27      page-faults               #    0.008 M/sec                    ( +-  0.06% )
-         5,885,668      cycles                    #    1.686 GHz                      ( +-  0.07% )
-            46,476      stalled-cycles-frontend   #    0.79% frontend cycles idle     ( +-  0.55% )
-         2,806,136      stalled-cycles-backend    #   47.68% backend cycles idle      ( +-  0.08% )
-        10,857,082      instructions              #    1.84  insn per cycle         
-                                                  #    0.26  stalled cycles per insn  ( +-  0.00% )
-         1,199,005      branches                  #  343.414 M/sec                    ( +-  0.00% )
-            22,067      branch-misses             #    1.84% of all branches          ( +-  0.10% )
+              3.78 msec task-clock                #    0.910 CPUs utilized            ( +-  0.47% )
+                 0      context-switches          #    0.131 K/sec                    ( +-  3.57% )
+                 0      cpu-migrations            #    0.001 K/sec                    ( +- 70.68% )
+                27      page-faults               #    0.007 M/sec                    ( +-  0.06% )
+         5,880,115      cycles                    #    1.556 GHz                      ( +-  0.05% )
+            44,055      stalled-cycles-frontend   #    0.75% frontend cycles idle     ( +-  0.43% )
+         2,515,685      stalled-cycles-backend    #   42.78% backend cycles idle      ( +-  0.07% )
+        10,855,177      instructions              #    1.85  insn per cycle         
+                                                  #    0.23  stalled cycles per insn  ( +-  0.00% )
+         1,198,697      branches                  #  317.212 M/sec                    ( +-  0.00% )
+            22,299      branch-misses             #    1.86% of all branches          ( +-  0.10% )
 
-         0.0038408 +- 0.0000255 seconds time elapsed  ( +-  0.66% )
+         0.0041510 +- 0.0000189 seconds time elapsed  ( +-  0.45% )
 
 
  Performance counter stats for './run_interpreter_v3.out 4' (1000 runs):
 
-              3.17 msec task-clock                #    0.904 CPUs utilized            ( +-  0.83% )
-                 0      context-switches          #    0.098 K/sec                    ( +-  5.02% )
+              3.29 msec task-clock                #    0.906 CPUs utilized            ( +-  0.72% )
+                 0      context-switches          #    0.139 K/sec                    ( +-  4.24% )
                  0      cpu-migrations            #    0.000 K/sec                    ( +-100.00% )
-                67      page-faults               #    0.021 M/sec                    ( +-  0.02% )
-         5,523,260      cycles                    #    1.740 GHz                      ( +-  0.08% )
-            50,522      stalled-cycles-frontend   #    0.91% frontend cycles idle     ( +-  0.59% )
-         2,409,970      stalled-cycles-backend    #   43.63% backend cycles idle      ( +-  0.14% )
-        12,481,810      instructions              #    2.26  insn per cycle         
+                67      page-faults               #    0.020 M/sec                    ( +-  0.02% )
+         5,534,503      cycles                    #    1.684 GHz                      ( +-  0.09% )
+            49,600      stalled-cycles-frontend   #    0.90% frontend cycles idle     ( +-  0.81% )
+         2,349,539      stalled-cycles-backend    #   42.45% backend cycles idle      ( +-  0.23% )
+        12,479,940      instructions              #    2.25  insn per cycle         
                                                   #    0.19  stalled cycles per insn  ( +-  0.00% )
-         1,231,771      branches                  #  388.071 M/sec                    ( +-  0.00% )
-            22,469      branch-misses             #    1.82% of all branches          ( +-  0.10% )
+         1,231,454      branches                  #  374.598 M/sec                    ( +-  0.00% )
+            22,578      branch-misses             #    1.83% of all branches          ( +-  0.09% )
 
-         0.0035128 +- 0.0000284 seconds time elapsed  ( +-  0.81% )
+         0.0036293 +- 0.0000255 seconds time elapsed  ( +-  0.70% )
 
 
  Performance counter stats for './run_interpreter_v4.out 4' (1000 runs):
 
-              2.99 msec task-clock                #    0.901 CPUs utilized            ( +-  0.96% )
-                 0      context-switches          #    0.091 K/sec                    ( +-  5.37% )
-                 0      cpu-migrations            #    0.001 K/sec                    ( +- 70.68% )
-                67      page-faults               #    0.023 M/sec                    ( +-  0.02% )
-         5,343,171      cycles                    #    1.785 GHz                      ( +-  0.08% )
-            54,936      stalled-cycles-frontend   #    1.03% frontend cycles idle     ( +-  0.62% )
-         2,109,365      stalled-cycles-backend    #   39.48% backend cycles idle      ( +-  0.15% )
-        11,788,245      instructions              #    2.21  insn per cycle         
+              3.03 msec task-clock                #    0.903 CPUs utilized            ( +-  0.93% )
+                 0      context-switches          #    0.135 K/sec                    ( +-  4.31% )
+                 0      cpu-migrations            #    0.002 K/sec                    ( +- 44.63% )
+                67      page-faults               #    0.022 M/sec                    ( +-  0.02% )
+         5,344,939      cycles                    #    1.762 GHz                      ( +-  0.08% )
+            53,177      stalled-cycles-frontend   #    0.99% frontend cycles idle     ( +-  0.72% )
+         2,173,507      stalled-cycles-backend    #   40.66% backend cycles idle      ( +-  0.13% )
+        11,786,046      instructions              #    2.21  insn per cycle         
                                                   #    0.18  stalled cycles per insn  ( +-  0.00% )
-         1,195,847      branches                  #  399.427 M/sec                    ( +-  0.00% )
-            26,330      branch-misses             #    2.20% of all branches          ( +-  0.09% )
+         1,195,528      branches                  #  394.051 M/sec                    ( +-  0.00% )
+            26,390      branch-misses             #    2.21% of all branches          ( +-  0.09% )
 
-         0.0033221 +- 0.0000310 seconds time elapsed  ( +-  0.93% )
+         0.0033581 +- 0.0000309 seconds time elapsed  ( +-  0.92% )
 
 ## Senario 5
 ### size 10000, seed 3, probabilities 1/9/1/5/5
+interpreter_v1,Total wall-clock Time (CLOCK_MONOTONIC) = 5.770140 msec <br>
+interpreter_v2,Total wall-clock Time (CLOCK_MONOTONIC) = 2.491998 msec <br>
+interpreter_v3,Total wall-clock Time (CLOCK_MONOTONIC) = 2.204778 msec <br>
+interpreter_v4,Total wall-clock Time (CLOCK_MONOTONIC) = 1.980949 msec <br>
+ <br>
  Performance counter stats for './run_interpreter_v1.out 5' (1000 runs):
 
-             11.54 msec task-clock                #    0.965 CPUs utilized            ( +-  1.00% )
-                 1      context-switches          #    0.107 K/sec                    ( +-  2.11% )
-                 0      cpu-migrations            #    0.001 K/sec                    ( +- 40.72% )
-                27      page-faults               #    0.002 M/sec                    ( +-  0.06% )
-        26,777,920      cycles                    #    2.320 GHz                      ( +-  0.12% )
-            80,962      stalled-cycles-frontend   #    0.30% frontend cycles idle     ( +-  0.67% )
-        13,774,609      stalled-cycles-backend    #   51.44% backend cycles idle      ( +-  0.08% )
-        66,996,849      instructions              #    2.50  insn per cycle         
-                                                  #    0.21  stalled cycles per insn  ( +-  0.00% )
-         8,277,536      branches                  #  717.047 M/sec                    ( +-  0.00% )
-            22,947      branch-misses             #    0.28% of all branches          ( +-  0.12% )
+             11.75 msec task-clock                #    0.967 CPUs utilized            ( +-  1.01% )
+                 1      context-switches          #    0.119 K/sec                    ( +-  2.33% )
+                 0      cpu-migrations            #    0.001 K/sec                    ( +- 30.00% )
+                27      page-faults               #    0.002 M/sec                    ( +-  0.05% )
+        26,690,884      cycles                    #    2.271 GHz                      ( +-  0.08% )
+            80,472      stalled-cycles-frontend   #    0.30% frontend cycles idle     ( +-  1.03% )
+        11,643,889      stalled-cycles-backend    #   43.62% backend cycles idle      ( +-  0.08% )
+        66,991,589      instructions              #    2.51  insn per cycle         
+                                                  #    0.17  stalled cycles per insn  ( +-  0.00% )
+         8,276,561      branches                  #  704.330 M/sec                    ( +-  0.00% )
+            22,769      branch-misses             #    0.28% of all branches          ( +-  0.12% )
 
-          0.011967 +- 0.000119 seconds time elapsed  ( +-  0.99% )
+          0.012150 +- 0.000122 seconds time elapsed  ( +-  1.01% )
 
 
  Performance counter stats for './run_interpreter_v2.out 5' (1000 runs):
 
-              6.92 msec task-clock                #    0.948 CPUs utilized            ( +-  1.12% )
-                 1      context-switches          #    0.092 K/sec                    ( +-  3.08% )
-                 0      cpu-migrations            #    0.001 K/sec                    ( +- 49.92% )
+              6.96 msec task-clock                #    0.948 CPUs utilized            ( +-  1.04% )
+                 1      context-switches          #    0.088 K/sec                    ( +-  3.53% )
+                 0      cpu-migrations            #    0.000 K/sec                    ( +- 57.68% )
                 27      page-faults               #    0.004 M/sec                    ( +-  0.06% )
-        12,598,291      cycles                    #    1.820 GHz                      ( +-  0.08% )
-            61,322      stalled-cycles-frontend   #    0.49% frontend cycles idle     ( +-  0.65% )
-         7,053,805      stalled-cycles-backend    #   55.99% backend cycles idle      ( +-  0.08% )
-        25,665,618      instructions              #    2.04  insn per cycle         
-                                                  #    0.27  stalled cycles per insn  ( +-  0.00% )
-         2,650,619      branches                  #  382.942 M/sec                    ( +-  0.00% )
-            22,736      branch-misses             #    0.86% of all branches          ( +-  0.13% )
+        12,561,681      cycles                    #    1.805 GHz                      ( +-  0.08% )
+            56,946      stalled-cycles-frontend   #    0.45% frontend cycles idle     ( +-  0.74% )
+         6,494,716      stalled-cycles-backend    #   51.70% backend cycles idle      ( +-  0.12% )
+        25,661,906      instructions              #    2.04  insn per cycle         
+                                                  #    0.25  stalled cycles per insn  ( +-  0.00% )
+         2,649,939      branches                  #  380.848 M/sec                    ( +-  0.00% )
+            22,786      branch-misses             #    0.86% of all branches          ( +-  0.12% )
 
-         0.0073026 +- 0.0000806 seconds time elapsed  ( +-  1.10% )
+         0.0073414 +- 0.0000753 seconds time elapsed  ( +-  1.03% )
 
 
  Performance counter stats for './run_interpreter_v3.out 5' (1000 runs):
 
-              6.33 msec task-clock                #    0.942 CPUs utilized            ( +-  1.08% )
-                 1      context-switches          #    0.083 K/sec                    ( +-  4.19% )
-                 0      cpu-migrations            #    0.001 K/sec                    ( +- 44.63% )
+              6.42 msec task-clock                #    0.945 CPUs utilized            ( +-  1.01% )
+                 1      context-switches          #    0.082 K/sec                    ( +-  3.44% )
+                 0      cpu-migrations            #    0.000 K/sec                    ( +-100.00% )
                 67      page-faults               #    0.011 M/sec                    ( +-  0.02% )
-        11,393,665      cycles                    #    1.801 GHz                      ( +-  0.05% )
-            61,190      stalled-cycles-frontend   #    0.54% frontend cycles idle     ( +-  0.68% )
-         5,822,632      stalled-cycles-backend    #   51.10% backend cycles idle      ( +-  0.10% )
-        29,361,317      instructions              #    2.58  insn per cycle         
+        11,403,422      cycles                    #    1.777 GHz                      ( +-  0.04% )
+            57,608      stalled-cycles-frontend   #    0.51% frontend cycles idle     ( +-  0.64% )
+         5,846,763      stalled-cycles-backend    #   51.27% backend cycles idle      ( +-  0.08% )
+        29,357,045      instructions              #    2.57  insn per cycle         
                                                   #    0.20  stalled cycles per insn  ( +-  0.00% )
-         2,683,099      branches                  #  424.080 M/sec                    ( +-  0.00% )
-            22,969      branch-misses             #    0.86% of all branches          ( +-  0.13% )
+         2,682,365      branches                  #  418.078 M/sec                    ( +-  0.00% )
+            23,004      branch-misses             #    0.86% of all branches          ( +-  0.11% )
 
-         0.0067162 +- 0.0000711 seconds time elapsed  ( +-  1.06% )
+         0.0067922 +- 0.0000670 seconds time elapsed  ( +-  0.99% )
 
 
  Performance counter stats for './run_interpreter_v4.out 5' (1000 runs):
 
-              5.95 msec task-clock                #    0.937 CPUs utilized            ( +-  0.97% )
-                 0      context-switches          #    0.083 K/sec                    ( +-  3.60% )
+              4.93 msec task-clock                #    0.937 CPUs utilized            ( +-  1.30% )
+                 0      context-switches          #    0.093 K/sec                    ( +-  4.22% )
                  0      cpu-migrations            #    0.001 K/sec                    ( +- 57.68% )
-                67      page-faults               #    0.011 M/sec                    ( +-  0.02% )
-        10,370,692      cycles                    #    1.742 GHz                      ( +-  0.04% )
-            63,964      stalled-cycles-frontend   #    0.62% frontend cycles idle     ( +-  0.52% )
-         4,960,798      stalled-cycles-backend    #   47.83% backend cycles idle      ( +-  0.08% )
-        26,285,257      instructions              #    2.53  insn per cycle         
-                                                  #    0.19  stalled cycles per insn  ( +-  0.00% )
-         2,459,246      branches                  #  412.972 M/sec                    ( +-  0.00% )
-            27,055      branch-misses             #    1.10% of all branches          ( +-  0.10% )
+                67      page-faults               #    0.014 M/sec                    ( +-  0.02% )
+        10,395,766      cycles                    #    2.108 GHz                      ( +-  0.07% )
+            62,525      stalled-cycles-frontend   #    0.60% frontend cycles idle     ( +-  0.66% )
+         5,140,447      stalled-cycles-backend    #   49.45% backend cycles idle      ( +-  0.14% )
+        26,279,059      instructions              #    2.53  insn per cycle         
+                                                  #    0.20  stalled cycles per insn  ( +-  0.00% )
+         2,458,178      branches                  #  498.391 M/sec                    ( +-  0.00% )
+            26,537      branch-misses             #    1.08% of all branches          ( +-  0.11% )
 
-         0.0063543 +- 0.0000598 seconds time elapsed  ( +-  0.94% )
+         0.0052625 +- 0.0000668 seconds time elapsed  ( +-  1.27% )
 
 ## Senario 6
 ### size 50000, seed 1, probabilities 1/9/1/5/5
+interpreter_v1,Total wall-clock Time (CLOCK_MONOTONIC) = 114.781366 msec <br>
+interpreter_v2,Total wall-clock Time (CLOCK_MONOTONIC) = 48.973231 msec <br>
+interpreter_v3,Total wall-clock Time (CLOCK_MONOTONIC) = 43.284736 msec <br>
+interpreter_v4,Total wall-clock Time (CLOCK_MONOTONIC) = 42.381889 msec <br>
+ <br>
  Performance counter stats for './run_interpreter_v1.out 6' (1000 runs):
 
-             34.27 msec task-clock                #    0.986 CPUs utilized            ( +-  0.30% )
-                 4      context-switches          #    0.107 K/sec                    ( +-  1.35% )
-                 0      cpu-migrations            #    0.001 K/sec                    ( +- 20.39% )
-                36      page-faults               #    0.001 M/sec                    ( +-  0.04% )
-       118,176,951      cycles                    #    3.449 GHz                      ( +-  0.06% )
-           231,167      stalled-cycles-frontend   #    0.20% frontend cycles idle     ( +-  0.89% )
-        61,593,946      stalled-cycles-backend    #   52.12% backend cycles idle      ( +-  0.04% )
-       300,751,022      instructions              #    2.54  insn per cycle         
-                                                  #    0.20  stalled cycles per insn  ( +-  0.00% )
-        37,195,455      branches                  # 1085.416 M/sec                    ( +-  0.00% )
-           104,593      branch-misses             #    0.28% of all branches          ( +-  0.02% )
+            120.35 msec task-clock                #    0.996 CPUs utilized            ( +-  0.10% )
+                11      context-switches          #    0.095 K/sec                    ( +-  0.26% )
+                 0      cpu-migrations            #    0.000 K/sec                    ( +- 20.18% )
+                36      page-faults               #    0.302 K/sec                    ( +-  0.04% )
+       500,188,959      cycles                    #    4.156 GHz                      ( +-  0.04% )
+           320,938      stalled-cycles-frontend   #    0.06% frontend cycles idle     ( +-  0.77% )
+       222,769,303      stalled-cycles-backend    #   44.54% backend cycles idle      ( +-  0.10% )
+     1,329,480,322      instructions              #    2.66  insn per cycle         
+                                                  #    0.17  stalled cycles per insn  ( +-  0.00% )
+       162,693,304      branches                  # 1351.821 M/sec                    ( +-  0.00% )
+           103,737      branch-misses             #    0.06% of all branches          ( +-  0.03% )
 
-          0.034750 +- 0.000105 seconds time elapsed  ( +-  0.30% )
+          0.120875 +- 0.000125 seconds time elapsed  ( +-  0.10% )
 
 
  Performance counter stats for './run_interpreter_v2.out 6' (1000 runs):
 
-             20.03 msec task-clock                #    0.977 CPUs utilized            ( +-  0.40% )
-                 2      context-switches          #    0.093 K/sec                    ( +-  1.19% )
-                 0      cpu-migrations            #    0.001 K/sec                    ( +- 28.71% )
-                36      page-faults               #    0.002 M/sec                    ( +-  0.04% )
-        55,688,475      cycles                    #    2.781 GHz                      ( +-  0.03% )
-           188,231      stalled-cycles-frontend   #    0.34% frontend cycles idle     ( +-  0.37% )
-        31,817,108      stalled-cycles-backend    #   57.13% backend cycles idle      ( +-  0.03% )
-       114,553,246      instructions              #    2.06  insn per cycle         
-                                                  #    0.28  stalled cycles per insn  ( +-  0.00% )
-        11,622,057      branches                  #  580.321 M/sec                    ( +-  0.00% )
-           105,873      branch-misses             #    0.91% of all branches          ( +-  0.02% )
+             57.01 msec task-clock                #    0.993 CPUs utilized            ( +-  0.20% )
+                 6      context-switches          #    0.097 K/sec                    ( +-  0.54% )
+                 0      cpu-migrations            #    0.000 K/sec                    ( +- 21.52% )
+                36      page-faults               #    0.638 K/sec                    ( +-  0.04% )
+       222,184,581      cycles                    #    3.897 GHz                      ( +-  0.04% )
+           219,102      stalled-cycles-frontend   #    0.10% frontend cycles idle     ( +-  0.89% )
+       123,844,618      stalled-cycles-backend    #   55.74% backend cycles idle      ( +-  0.06% )
+       493,283,305      instructions              #    2.22  insn per cycle         
+                                                  #    0.25  stalled cycles per insn  ( +-  0.00% )
+        49,187,046      branches                  #  862.756 M/sec                    ( +-  0.00% )
+           105,675      branch-misses             #    0.21% of all branches          ( +-  0.03% )
 
-         0.0205040 +- 0.0000820 seconds time elapsed  ( +-  0.40% )
+          0.057440 +- 0.000114 seconds time elapsed  ( +-  0.20% )
 
 
  Performance counter stats for './run_interpreter_v3.out 6' (1000 runs):
 
-             19.15 msec task-clock                #    0.975 CPUs utilized            ( +-  0.40% )
-                 2      context-switches          #    0.096 K/sec                    ( +-  1.11% )
-                 0      cpu-migrations            #    0.000 K/sec                    ( +- 33.20% )
-               232      page-faults               #    0.012 M/sec                    ( +-  0.01% )
-        50,297,790      cycles                    #    2.627 GHz                      ( +-  0.03% )
-           201,147      stalled-cycles-frontend   #    0.40% frontend cycles idle     ( +-  0.37% )
-        26,356,157      stalled-cycles-backend    #   52.40% backend cycles idle      ( +-  0.04% )
-       131,338,012      instructions              #    2.61  insn per cycle         
+             52.06 msec task-clock                #    0.991 CPUs utilized            ( +-  0.18% )
+                 5      context-switches          #    0.096 K/sec                    ( +-  0.46% )
+                 0      cpu-migrations            #    0.000 K/sec                    ( +- 19.76% )
+               232      page-faults               #    0.004 M/sec                    ( +-  0.01% )
+       196,424,108      cycles                    #    3.773 GHz                      ( +-  0.02% )
+           237,076      stalled-cycles-frontend   #    0.12% frontend cycles idle     ( +-  0.83% )
+       113,317,872      stalled-cycles-backend    #   57.69% backend cycles idle      ( +-  0.04% )
+       562,754,255      instructions              #    2.86  insn per cycle         
                                                   #    0.20  stalled cycles per insn  ( +-  0.00% )
-        11,778,159      branches                  #  615.057 M/sec                    ( +-  0.00% )
-           106,782      branch-misses             #    0.91% of all branches          ( +-  0.01% )
+        49,341,075      branches                  #  947.748 M/sec                    ( +-  0.00% )
+           106,313      branch-misses             #    0.22% of all branches          ( +-  0.02% )
 
-         0.0196447 +- 0.0000781 seconds time elapsed  ( +-  0.40% )
+         0.0525161 +- 0.0000943 seconds time elapsed  ( +-  0.18% )
 
 
  Performance counter stats for './run_interpreter_v4.out 6' (1000 runs):
 
-             17.88 msec task-clock                #    0.973 CPUs utilized            ( +-  0.44% )
-                 2      context-switches          #    0.091 K/sec                    ( +-  1.23% )
-                 0      cpu-migrations            #    0.001 K/sec                    ( +- 33.20% )
-               232      page-faults               #    0.013 M/sec                    ( +-  0.01% )
-        45,250,428      cycles                    #    2.530 GHz                      ( +-  0.03% )
-           217,866      stalled-cycles-frontend   #    0.48% frontend cycles idle     ( +-  0.37% )
-        21,429,421      stalled-cycles-backend    #   47.36% backend cycles idle      ( +-  0.06% )
-       115,860,581      instructions              #    2.56  insn per cycle         
-                                                  #    0.18  stalled cycles per insn  ( +-  0.00% )
-        10,899,768      branches                  #  609.443 M/sec                    ( +-  0.00% )
-           126,254      branch-misses             #    1.16% of all branches          ( +-  0.01% )
+             51.50 msec task-clock                #    0.991 CPUs utilized            ( +-  0.18% )
+                 5      context-switches          #    0.096 K/sec                    ( +-  0.46% )
+                 0      cpu-migrations            #    0.000 K/sec                    ( +- 35.23% )
+               232      page-faults               #    0.005 M/sec                    ( +-  0.01% )
+       192,487,141      cycles                    #    3.737 GHz                      ( +-  0.02% )
+           243,346      stalled-cycles-frontend   #    0.13% frontend cycles idle     ( +-  0.40% )
+       113,447,614      stalled-cycles-backend    #   58.94% backend cycles idle      ( +-  0.03% )
+       550,803,391      instructions              #    2.86  insn per cycle         
+                                                  #    0.21  stalled cycles per insn  ( +-  0.00% )
+        48,831,652      branches                  #  948.102 M/sec                    ( +-  0.00% )
+           126,085      branch-misses             #    0.26% of all branches          ( +-  0.02% )
 
-         0.0183802 +- 0.0000789 seconds time elapsed  ( +-  0.43% )
+         0.0519870 +- 0.0000960 seconds time elapsed  ( +-  0.18% )
 
 ## Senario 7
 ### size 50000, seed 2, probabilities 1/9/1/5/5
+interpreter_v1,Total wall-clock Time (CLOCK_MONOTONIC) = 15.129888 msec <br>
+interpreter_v2,Total wall-clock Time (CLOCK_MONOTONIC) = 6.809585 msec <br>
+interpreter_v3,Total wall-clock Time (CLOCK_MONOTONIC) = 6.047718 msec <br>
+interpreter_v4,Total wall-clock Time (CLOCK_MONOTONIC) = 5.714163 msec <br>
+ <br>
  Performance counter stats for './run_interpreter_v1.out 7' (1000 runs):
 
-             24.25 msec task-clock                #    0.981 CPUs utilized            ( +-  0.26% )
-                 3      context-switches          #    0.109 K/sec                    ( +-  0.75% )
-                 0      cpu-migrations            #    0.000 K/sec                    ( +- 40.72% )
-                36      page-faults               #    0.001 M/sec                    ( +-  0.04% )
-        71,699,259      cycles                    #    2.957 GHz                      ( +-  0.02% )
-           194,898      stalled-cycles-frontend   #    0.27% frontend cycles idle     ( +-  0.34% )
-        36,140,976      stalled-cycles-backend    #   50.41% backend cycles idle      ( +-  0.04% )
-       177,508,815      instructions              #    2.48  insn per cycle         
-                                                  #    0.20  stalled cycles per insn  ( +-  0.00% )
-        22,051,139      branches                  #  909.363 M/sec                    ( +-  0.00% )
-           104,478      branch-misses             #    0.47% of all branches          ( +-  0.01% )
+             23.06 msec task-clock                #    0.982 CPUs utilized            ( +-  0.49% )
+                 3      context-switches          #    0.109 K/sec                    ( +-  1.34% )
+                 0      cpu-migrations            #    0.001 K/sec                    ( +- 27.57% )
+                36      page-faults               #    0.002 M/sec                    ( +-  0.04% )
+        72,118,353      cycles                    #    3.128 GHz                      ( +-  0.07% )
+           194,857      stalled-cycles-frontend   #    0.27% frontend cycles idle     ( +-  1.32% )
+        29,090,103      stalled-cycles-backend    #   40.34% backend cycles idle      ( +-  0.05% )
+       177,499,424      instructions              #    2.46  insn per cycle         
+                                                  #    0.16  stalled cycles per insn  ( +-  0.00% )
+        22,049,430      branches                  #  956.214 M/sec                    ( +-  0.00% )
+           103,576      branch-misses             #    0.47% of all branches          ( +-  0.02% )
 
-         0.0247288 +- 0.0000626 seconds time elapsed  ( +-  0.25% )
+          0.023476 +- 0.000115 seconds time elapsed  ( +-  0.49% )
 
 
  Performance counter stats for './run_interpreter_v2.out 7' (1000 runs):
 
-             16.02 msec task-clock                #    0.971 CPUs utilized            ( +-  0.38% )
-                 2      context-switches          #    0.107 K/sec                    ( +-  1.05% )
-                 0      cpu-migrations            #    0.001 K/sec                    ( +- 30.00% )
+             15.77 msec task-clock                #    0.973 CPUs utilized            ( +-  0.44% )
+                 2      context-switches          #    0.105 K/sec                    ( +-  1.28% )
+                 0      cpu-migrations            #    0.000 K/sec                    ( +- 57.68% )
                 36      page-faults               #    0.002 M/sec                    ( +-  0.04% )
-        35,448,688      cycles                    #    2.213 GHz                      ( +-  0.02% )
-           171,456      stalled-cycles-frontend   #    0.48% frontend cycles idle     ( +-  0.34% )
-        18,487,772      stalled-cycles-backend    #   52.15% backend cycles idle      ( +-  0.04% )
-        69,754,402      instructions              #    1.97  insn per cycle         
-                                                  #    0.27  stalled cycles per insn  ( +-  0.00% )
-         7,388,704      branches                  #  461.261 M/sec                    ( +-  0.00% )
-           105,656      branch-misses             #    1.43% of all branches          ( +-  0.01% )
+        35,502,333      cycles                    #    2.251 GHz                      ( +-  0.02% )
+           156,268      stalled-cycles-frontend   #    0.44% frontend cycles idle     ( +-  0.30% )
+        16,474,051      stalled-cycles-backend    #   46.40% backend cycles idle      ( +-  0.03% )
+        69,746,869      instructions              #    1.96  insn per cycle         
+                                                  #    0.24  stalled cycles per insn  ( +-  0.00% )
+         7,387,343      branches                  #  468.390 M/sec                    ( +-  0.00% )
+           105,569      branch-misses             #    1.43% of all branches          ( +-  0.02% )
 
-         0.0165013 +- 0.0000620 seconds time elapsed  ( +-  0.38% )
+         0.0162163 +- 0.0000712 seconds time elapsed  ( +-  0.44% )
 
 
  Performance counter stats for './run_interpreter_v3.out 7' (1000 runs):
 
-             15.49 msec task-clock                #    0.970 CPUs utilized            ( +-  0.39% )
-                 2      context-switches          #    0.106 K/sec                    ( +-  1.09% )
-                 0      cpu-migrations            #    0.000 K/sec                    ( +- 49.92% )
+             15.41 msec task-clock                #    0.971 CPUs utilized            ( +-  0.38% )
+                 2      context-switches          #    0.103 K/sec                    ( +-  1.19% )
+                 0      cpu-migrations            #    0.000 K/sec                    ( +- 57.68% )
                232      page-faults               #    0.015 M/sec                    ( +-  0.01% )
-        32,494,994      cycles                    #    2.097 GHz                      ( +-  0.02% )
-           175,844      stalled-cycles-frontend   #    0.54% frontend cycles idle     ( +-  0.23% )
-        15,693,747      stalled-cycles-backend    #   48.30% backend cycles idle      ( +-  0.03% )
-        80,179,872      instructions              #    2.47  insn per cycle         
-                                                  #    0.20  stalled cycles per insn  ( +-  0.00% )
-         7,544,738      branches                  #  486.976 M/sec                    ( +-  0.00% )
-           106,704      branch-misses             #    1.41% of all branches          ( +-  0.01% )
+        32,641,505      cycles                    #    2.119 GHz                      ( +-  0.02% )
+           168,758      stalled-cycles-frontend   #    0.52% frontend cycles idle     ( +-  0.33% )
+        15,317,525      stalled-cycles-backend    #   46.93% backend cycles idle      ( +-  0.04% )
+        80,173,212      instructions              #    2.46  insn per cycle         
+                                                  #    0.19  stalled cycles per insn  ( +-  0.00% )
+         7,543,537      branches                  #  489.656 M/sec                    ( +-  0.00% )
+           106,629      branch-misses             #    1.41% of all branches          ( +-  0.01% )
 
-         0.0159727 +- 0.0000608 seconds time elapsed  ( +-  0.38% )
+         0.0158606 +- 0.0000598 seconds time elapsed  ( +-  0.38% )
 
 
  Performance counter stats for './run_interpreter_v4.out 7' (1000 runs):
 
-             15.13 msec task-clock                #    0.970 CPUs utilized            ( +-  0.44% )
-                 2      context-switches          #    0.107 K/sec                    ( +-  1.17% )
-                 0      cpu-migrations            #    0.000 K/sec                    ( +- 49.92% )
-               232      page-faults               #    0.015 M/sec                    ( +-  0.01% )
-        31,392,047      cycles                    #    2.074 GHz                      ( +-  0.03% )
-           197,517      stalled-cycles-frontend   #    0.63% frontend cycles idle     ( +-  0.23% )
-        13,709,712      stalled-cycles-backend    #   43.67% backend cycles idle      ( +-  0.05% )
-        76,071,604      instructions              #    2.42  insn per cycle         
-                                                  #    0.18  stalled cycles per insn  ( +-  0.00% )
-         7,350,263      branches                  #  485.710 M/sec                    ( +-  0.00% )
-           126,369      branch-misses             #    1.72% of all branches          ( +-  0.01% )
+             12.83 msec task-clock                #    0.971 CPUs utilized            ( +-  0.92% )
+                 1      context-switches          #    0.108 K/sec                    ( +-  2.26% )
+                 0      cpu-migrations            #    0.001 K/sec                    ( +- 26.55% )
+               232      page-faults               #    0.018 M/sec                    ( +-  0.01% )
+        31,843,447      cycles                    #    2.482 GHz                      ( +-  0.09% )
+           206,441      stalled-cycles-frontend   #    0.65% frontend cycles idle     ( +-  1.15% )
+        14,222,117      stalled-cycles-backend    #   44.66% backend cycles idle      ( +-  0.18% )
+        76,066,058      instructions              #    2.39  insn per cycle         
+                                                  #    0.19  stalled cycles per insn  ( +-  0.00% )
+         7,349,237      branches                  #  572.853 M/sec                    ( +-  0.00% )
+           125,620      branch-misses             #    1.71% of all branches          ( +-  0.03% )
 
-         0.0156032 +- 0.0000681 seconds time elapsed  ( +-  0.44% )
+          0.013208 +- 0.000121 seconds time elapsed  ( +-  0.91% )
 
 ## Senario 8
 ### size 50000, seed 3, probabilities 1/9/1/5/5
+interpreter_v1,Total wall-clock Time (CLOCK_MONOTONIC) = 25.828954 msec <br>
+interpreter_v2,Total wall-clock Time (CLOCK_MONOTONIC) = 11.209537 msec <br>
+interpreter_v3,Total wall-clock Time (CLOCK_MONOTONIC) = 10.025245 msec <br>
+interpreter_v4,Total wall-clock Time (CLOCK_MONOTONIC) = 8.859035 msec <br>
+ <br>
  Performance counter stats for './run_interpreter_v1.out 8' (1000 runs):
 
-             33.87 msec task-clock                #    0.987 CPUs utilized            ( +-  0.34% )
-                 4      context-switches          #    0.107 K/sec                    ( +-  1.22% )
-                 0      cpu-migrations            #    0.001 K/sec                    ( +- 17.18% )
+             33.58 msec task-clock                #    0.988 CPUs utilized            ( +-  0.35% )
+                 3      context-switches          #    0.100 K/sec                    ( +-  0.95% )
+                 0      cpu-migrations            #    0.001 K/sec                    ( +- 22.15% )
                 36      page-faults               #    0.001 M/sec                    ( +-  0.04% )
-       118,507,901      cycles                    #    3.499 GHz                      ( +-  0.07% )
-           228,666      stalled-cycles-frontend   #    0.19% frontend cycles idle     ( +-  0.78% )
-        61,583,547      stalled-cycles-backend    #   51.97% backend cycles idle      ( +-  0.07% )
-       300,749,568      instructions              #    2.54  insn per cycle         
-                                                  #    0.20  stalled cycles per insn  ( +-  0.00% )
-        37,195,171      branches                  # 1098.134 M/sec                    ( +-  0.00% )
-           104,544      branch-misses             #    0.28% of all branches          ( +-  0.02% )
+       118,450,759      cycles                    #    3.527 GHz                      ( +-  0.04% )
+           214,332      stalled-cycles-frontend   #    0.18% frontend cycles idle     ( +-  1.09% )
+        50,564,168      stalled-cycles-backend    #   42.69% backend cycles idle      ( +-  0.07% )
+       300,735,842      instructions              #    2.54  insn per cycle         
+                                                  #    0.17  stalled cycles per insn  ( +-  0.00% )
+        37,192,468      branches                  # 1107.573 M/sec                    ( +-  0.00% )
+           103,908      branch-misses             #    0.28% of all branches          ( +-  0.02% )
 
-          0.034334 +- 0.000116 seconds time elapsed  ( +-  0.34% )
+          0.033999 +- 0.000121 seconds time elapsed  ( +-  0.36% )
 
 
  Performance counter stats for './run_interpreter_v2.out 8' (1000 runs):
 
-             20.25 msec task-clock                #    0.976 CPUs utilized            ( +-  0.32% )
-                 2      context-switches          #    0.092 K/sec                    ( +-  1.14% )
-                 0      cpu-migrations            #    0.000 K/sec                    ( +- 44.63% )
+             18.76 msec task-clock                #    0.979 CPUs utilized            ( +-  0.61% )
+                 2      context-switches          #    0.099 K/sec                    ( +-  1.73% )
+                 0      cpu-migrations            #    0.001 K/sec                    ( +- 28.71% )
                 36      page-faults               #    0.002 M/sec                    ( +-  0.04% )
-        55,599,028      cycles                    #    2.745 GHz                      ( +-  0.02% )
-           186,593      stalled-cycles-frontend   #    0.34% frontend cycles idle     ( +-  0.33% )
-        31,816,611      stalled-cycles-backend    #   57.23% backend cycles idle      ( +-  0.03% )
-       114,552,077      instructions              #    2.06  insn per cycle         
-                                                  #    0.28  stalled cycles per insn  ( +-  0.00% )
-        11,621,858      branches                  #  573.813 M/sec                    ( +-  0.00% )
-           105,889      branch-misses             #    0.91% of all branches          ( +-  0.01% )
+        55,928,825      cycles                    #    2.981 GHz                      ( +-  0.06% )
+           175,136      stalled-cycles-frontend   #    0.31% frontend cycles idle     ( +-  0.75% )
+        29,018,173      stalled-cycles-backend    #   51.88% backend cycles idle      ( +-  0.11% )
+       114,546,362      instructions              #    2.05  insn per cycle         
+                                                  #    0.25  stalled cycles per insn  ( +-  0.00% )
+        11,620,862      branches                  #  619.462 M/sec                    ( +-  0.00% )
+           105,757      branch-misses             #    0.91% of all branches          ( +-  0.03% )
 
-         0.0207449 +- 0.0000656 seconds time elapsed  ( +-  0.32% )
+          0.019166 +- 0.000117 seconds time elapsed  ( +-  0.61% )
 
 
  Performance counter stats for './run_interpreter_v3.out 8' (1000 runs):
 
-             19.45 msec task-clock                #    0.975 CPUs utilized            ( +-  0.35% )
-                 2      context-switches          #    0.097 K/sec                    ( +-  1.01% )
-                 0      cpu-migrations            #    0.001 K/sec                    ( +- 28.41% )
-               232      page-faults               #    0.012 M/sec                    ( +-  0.01% )
-        50,285,925      cycles                    #    2.586 GHz                      ( +-  0.02% )
-           203,372      stalled-cycles-frontend   #    0.40% frontend cycles idle     ( +-  0.80% )
-        26,370,438      stalled-cycles-backend    #   52.44% backend cycles idle      ( +-  0.03% )
-       131,338,276      instructions              #    2.61  insn per cycle         
+             17.91 msec task-clock                #    0.977 CPUs utilized            ( +-  0.65% )
+                 2      context-switches          #    0.095 K/sec                    ( +-  1.61% )
+                 0      cpu-migrations            #    0.001 K/sec                    ( +- 24.81% )
+               232      page-faults               #    0.013 M/sec                    ( +-  0.01% )
+        50,601,109      cycles                    #    2.825 GHz                      ( +-  0.05% )
+           196,580      stalled-cycles-frontend   #    0.39% frontend cycles idle     ( +-  0.81% )
+        25,703,742      stalled-cycles-backend    #   50.80% backend cycles idle      ( +-  0.11% )
+       131,332,437      instructions              #    2.60  insn per cycle         
                                                   #    0.20  stalled cycles per insn  ( +-  0.00% )
-        11,778,233      branches                  #  605.623 M/sec                    ( +-  0.00% )
-           106,840      branch-misses             #    0.91% of all branches          ( +-  0.01% )
+        11,777,103      branches                  #  657.515 M/sec                    ( +-  0.00% )
+           106,509      branch-misses             #    0.90% of all branches          ( +-  0.03% )
 
-         0.0199537 +- 0.0000698 seconds time elapsed  ( +-  0.35% )
+          0.018331 +- 0.000118 seconds time elapsed  ( +-  0.64% )
 
 
  Performance counter stats for './run_interpreter_v4.out 8' (1000 runs):
 
-             18.31 msec task-clock                #    0.973 CPUs utilized            ( +-  0.34% )
-                 2      context-switches          #    0.089 K/sec                    ( +-  1.15% )
-                 0      cpu-migrations            #    0.000 K/sec                    ( +- 44.63% )
-               232      page-faults               #    0.013 M/sec                    ( +-  0.01% )
-        45,200,790      cycles                    #    2.469 GHz                      ( +-  0.02% )
-           218,432      stalled-cycles-frontend   #    0.48% frontend cycles idle     ( +-  0.34% )
-        21,470,589      stalled-cycles-backend    #   47.50% backend cycles idle      ( +-  0.04% )
-       115,860,197      instructions              #    2.56  insn per cycle         
+             16.42 msec task-clock                #    0.976 CPUs utilized            ( +-  0.72% )
+                 2      context-switches          #    0.099 K/sec                    ( +-  2.08% )
+                 0      cpu-migrations            #    0.001 K/sec                    ( +- 26.34% )
+               232      page-faults               #    0.014 M/sec                    ( +-  0.01% )
+        45,576,690      cycles                    #    2.777 GHz                      ( +-  0.05% )
+           213,548      stalled-cycles-frontend   #    0.47% frontend cycles idle     ( +-  1.17% )
+        22,285,089      stalled-cycles-backend    #   48.90% backend cycles idle      ( +-  0.12% )
+       115,856,159      instructions              #    2.54  insn per cycle         
                                                   #    0.19  stalled cycles per insn  ( +-  0.00% )
-        10,899,691      branches                  #  595.345 M/sec                    ( +-  0.00% )
-           126,286      branch-misses             #    1.16% of all branches          ( +-  0.01% )
+        10,899,001      branches                  #  663.964 M/sec                    ( +-  0.00% )
+           125,769      branch-misses             #    1.15% of all branches          ( +-  0.03% )
 
-         0.0188221 +- 0.0000630 seconds time elapsed  ( +-  0.33% )
+          0.016822 +- 0.000121 seconds time elapsed  ( +-  0.72% )
