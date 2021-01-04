@@ -6,15 +6,17 @@
 #include <time.h>
 #include "generator/gen.h"
 #include "interpreter/reg.h"
+#include "interpreter/predecoder.h"
 #include "interpreter/interpreter_v1.h"
 #include "interpreter/interpreter_v2.h"
 #include "interpreter/interpreter_v3.h"
 #include "interpreter/interpreter_v4.h"
-#include "interpreter/predecoder.h"
+// #include "binary_translator/translator_v1.h"
 
 struct timespec diff(struct timespec, struct timespec);
 
 int main(int argc, char *argv[]){
+    // initialize the register and senario
     reg myreg = {0, 0, 0};
     int size = 10000;
     int seed = 1;
@@ -23,6 +25,7 @@ int main(int argc, char *argv[]){
     int prob_2[5] = {1,1,1,0,0};
     int senario = 3;
 
+    // select senario based on the input 1
     if (argc-1){
         senario = atoi(argv[1]);
         switch (senario){
@@ -72,6 +75,7 @@ int main(int argc, char *argv[]){
     struct reg myreg2 = myreg; 
     struct reg myreg3 = myreg; 
     struct reg myreg4 = myreg; 
+    struct reg myreg5 = myreg; 
 
     // printf("After init, myreg.rA: %d\n", myreg.rA);
     // printf("After init, myreg.rL: %d\n", myreg.rL);
@@ -119,7 +123,8 @@ int main(int argc, char *argv[]){
 
     int i = 0, rounds = 1;
     struct timespec start, end, temp;
-    double time_used_v1, time_used_v2, time_used_v3, time_used_v4;
+    double time_used_v1, time_used_v2, time_used_v3, time_used_v4, time_used_v5;
+    // assign rounds based on the input 2
     if (argc >= 3) rounds = atoi(argv[2]);
     printf("rounds: %d\n", rounds);
     printf("####################\n");
@@ -152,6 +157,13 @@ int main(int argc, char *argv[]){
     temp = diff(start, end);
     time_used_v4 = temp.tv_sec + (double) temp.tv_nsec / 1000000000.0;
 
+    clock_gettime(CLOCK_MONOTONIC, &start);
+    for(i = 0; i < rounds; i++)
+        // binary_translation_v1(buf,  size, &myreg5);
+    clock_gettime(CLOCK_MONOTONIC, &end);
+    temp = diff(start, end);
+    time_used_v5 = temp.tv_sec + (double) temp.tv_nsec / 1000000000.0;
+
     printf("\n");
     // printf("interpreter_v1, myreg.rA: %d\n", myreg1.rA);
     // printf("interpreter_v1, myreg.rL: %d\n", myreg1.rL);
@@ -168,6 +180,10 @@ int main(int argc, char *argv[]){
     // printf("interpreter_v4, myreg.rA: %d\n", myreg4.rA);
     // printf("interpreter_v4, myreg.rL: %d\n", myreg4.rL);
     printf("interpreter_v4,Total wall-clock Time (CLOCK_MONOTONIC) = %f msec\n", time_used_v4/rounds*1000);
+    // printf("\n");
+    // printf("interpreter_v5, myreg.rA: %d\n", myreg4.rA);
+    // printf("interpreter_v5, myreg.rL: %d\n", myreg4.rL);
+    printf("interpreter_v5,Total wall-clock Time (CLOCK_MONOTONIC) = %f msec\n", time_used_v5/rounds*1000);
     // printf("\n");
 
     free(buf);

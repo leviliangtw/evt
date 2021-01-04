@@ -3,11 +3,12 @@
 #include "predecoder.h"
 
 void interpreter_v2(char *buf, int size, reg *myreg){
+    // address array of each label
     static void *ins[] = { &&HALT, &&CLRA, &&INC3A, &&DECA, &&SETL, &&BACK7 };
 
     myreg->rIP = buf;
-    char inst = *(myreg->rIP);
-    int opcode = inst;
+    char inst = *(myreg->rIP);  // useless, just wanna remind myself waht the real structure should be
+    int opcode = inst;          // useless, just wanna remind myself waht the real structure should be
     goto *ins[*myreg->rIP];
 
 CLRA:

@@ -6,7 +6,7 @@ void predecoding(char *buf, int size, void *ins[], preTable *myPT, char supereve
     // printf("    *ins: %p\n", *ins);
     // printf("*ins[1]: %p\n", routine[1]);
 
-    if (superevents)
+    if (superevents)    // for interpreter_v4
         for(int i = 0; i< size; i++){
             myPT[i].routine = ins[*(buf+i)];
             if (*(buf+i) == 2){
@@ -18,7 +18,7 @@ void predecoding(char *buf, int size, void *ins[], preTable *myPT, char supereve
                 case 3:
                     myPT[i].routine = ins[7];
                     break;
-                // case 4:
+                // case 4: maybe done with multiple same instructions
                 //     myPT[i].routine = ins[8];
                 //     break;
                 // case 5:
@@ -36,9 +36,9 @@ void predecoding(char *buf, int size, void *ins[], preTable *myPT, char supereve
             // op2
             // op3
         }
-    else
+    else    // for interpreter_v3
         for(int i = 0; i< size; i++){
-            myPT[i].routine = ins[*(buf+i)];
+            myPT[i].routine = ins[*(buf+i)];    // to address is better
             // op1
             // op2
             // op3

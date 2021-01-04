@@ -26,8 +26,8 @@ void interpreter_v4(char *buf, int size, reg *myreg){
 CLRA:
     // printf("opcode 1: set content of register A to 0\n");
     TPC += 1;
-    SPC += 1;
-    myreg->rIP += 1;
+    SPC += 1;           // useless
+    myreg->rIP += 1;    // useless
     // operation
     myreg->rA = 0;
     // operation

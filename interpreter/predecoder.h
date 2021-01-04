@@ -7,9 +7,9 @@ struct preTable
 {
     /* data */
     char *routine;
-    char op1;
-    char op2;
-    char op3;
+    char op1;   // useless
+    char op2;   // useless
+    char op3;   // useless
 } typedef preTable;
 
 void predecoding(char *, int, void *[], preTable *, char);

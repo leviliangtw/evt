@@ -1,0 +1,13 @@
+// translator_v1.h
+#ifndef __TRANSLATOR_V1_H_ 
+#define __TRANSLATOR_V1_H_
+#include "../interpreter/reg.h"
+
+void binary_translation_v1(char *, int, reg *);
+
+struct bi_translations {
+    char * codes;
+    int len; 
+} typedef bi_translations;
+
+#endif  /* __TRANSLATOR_V1_H_ */

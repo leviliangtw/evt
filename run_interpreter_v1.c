@@ -7,6 +7,7 @@
 #include "interpreter/interpreter_v1.h"
 
 int main(int argc, char *argv[]){
+    // initialize the register and senario
     reg myreg = {0, 0, 0};
     int size = 10000;
     int seed = 1;
@@ -15,6 +16,7 @@ int main(int argc, char *argv[]){
     int prob_2[5] = {1,1,1,0,0};
     int senario = 1;
 
+    // select senario based on the input 1
     if (argc-1){
         senario = atoi(argv[1]);
         switch (senario){
