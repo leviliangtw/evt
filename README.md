@@ -1,4 +1,4 @@
-# TUM-IN2125-VT
+# VT-Emulation
 
 ## Build & Check
 * $ make clean
