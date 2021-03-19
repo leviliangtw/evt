@@ -18,5 +18,6 @@ void jit_v0(char *, int, reg *);
 void jit_v1(char *, int, reg *);
 void jit_v2(char *, int, reg *);
 void jit_v3(char *, int, reg *);
+void jit_v4(char *, int, reg *);
 
 #endif  /* __JIT_COMPILER_H_ */

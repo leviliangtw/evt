@@ -58,47 +58,126 @@
 ## Measurement Script - `main.sh`
 ```
 ####################
+senario: 1
+size: 10000
+seed: 1
+prob: 0 1 0 0 0
+rounds: 100
+####################
+
+INT_v1: No optimization
+myreg.rA: 2999706, myreg.rL: 7
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.133573 msec
+
+INT_v2: Computed goto
+myreg.rA: 2999706, myreg.rL: 7
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.036198 msec
+
+INT_v3: Predecoded computed goto
+myreg.rA: 2999706, myreg.rL: 7
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.040134 msec
+
+INT_v4: Superevents
+myreg.rA: 2999706, myreg.rL: 7
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.039867 msec
+
+JIT_v1: Pre-generation of static BBs
+myreg.rA: 30003, myreg.rL: 7
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.064213 msec
+
+JIT_v2: Pre-generation of dynamic BBs
+myreg.rA: 30003, myreg.rL: 7
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.022327 msec
+
+JIT_v3: Dynamic generation of dynamic BBs
+myreg.rA: 30003, myreg.rL: 7
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.022158 msec
+
+JIT_v4: Chained Dynamic generation of dynamic BBs
+myreg.rA: 30003, myreg.rL: 7
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.024813 msec
+
+
+####################
+senario: 2
+size: 10000
+seed: 1
+prob: 1 1 1 0 0
+rounds: 100
+####################
+
+INT_v1: No optimization
+myreg.rA: -1, myreg.rL: 7
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.126985 msec
+
+INT_v2: Computed goto
+myreg.rA: -1, myreg.rL: 7
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.079060 msec
+
+INT_v3: Predecoded computed goto
+myreg.rA: -1, myreg.rL: 7
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.094034 msec
+
+INT_v4: Superevents
+myreg.rA: -1, myreg.rL: 7
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.102477 msec
+
+JIT_v1: Pre-generation of static BBs
+myreg.rA: -1, myreg.rL: 7
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.064276 msec
+
+JIT_v2: Pre-generation of dynamic BBs
+myreg.rA: -1, myreg.rL: 7
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.022840 msec
+
+JIT_v3: Dynamic generation of dynamic BBs
+myreg.rA: -1, myreg.rL: 7
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.022378 msec
+
+JIT_v4: Chained Dynamic generation of dynamic BBs
+myreg.rA: -1, myreg.rL: 7
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.024886 msec
+
+
+####################
 senario: 3
 size: 10000
 seed: 1
 prob: 1 9 1 5 5
-rounds: 1
+rounds: 100
 ####################
 
 INT_v1: No optimization
-myreg.rA: 95
-myreg.rL: 0
-Total wall-clock Time (CLOCK_MONOTONIC) = 10.540361 msec
+myreg.rA: 95, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 3.986307 msec
 
 INT_v2: Computed goto
-myreg.rA: 95
-myreg.rL: 0
-Total wall-clock Time (CLOCK_MONOTONIC) = 1.724938 msec
+myreg.rA: 95, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 1.737577 msec
 
 INT_v3: Predecoded computed goto
-myreg.rA: 95
-myreg.rL: 0
-Total wall-clock Time (CLOCK_MONOTONIC) = 1.686455 msec
+myreg.rA: 95, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 1.572109 msec
 
 INT_v4: Superevents
-myreg.rA: 95
-myreg.rL: 0
-Total wall-clock Time (CLOCK_MONOTONIC) = 1.560252 msec
+myreg.rA: 95, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 1.517316 msec
 
 JIT_v1: Pre-generation of static BBs
-myreg.rA: 95
-myreg.rL: 0
-Total wall-clock Time (CLOCK_MONOTONIC) = 2.471051 msec
+myreg.rA: 95, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.089632 msec
 
 JIT_v2: Pre-generation of dynamic BBs
-myreg.rA: 95
-myreg.rL: 0
-Total wall-clock Time (CLOCK_MONOTONIC) = 1.703007 msec
+myreg.rA: 95, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.041566 msec
 
 JIT_v3: Dynamic generation of dynamic BBs
-myreg.rA: 95
-myreg.rL: 0
-Total wall-clock Time (CLOCK_MONOTONIC) = 1.276697 msec
+myreg.rA: 95, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.035429 msec
+
+JIT_v4: Chained Dynamic generation of dynamic BBs
+myreg.rA: 95, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.033196 msec
 
 
 ####################
@@ -106,43 +185,40 @@ senario: 4
 size: 10000
 seed: 2
 prob: 1 9 1 5 5
-rounds: 1
+rounds: 100
 ####################
 
 INT_v1: No optimization
-myreg.rA: 0
-myreg.rL: 0
-Total wall-clock Time (CLOCK_MONOTONIC) = 6.113268 msec
+myreg.rA: 0, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 2.204011 msec
 
 INT_v2: Computed goto
-myreg.rA: 0
-myreg.rL: 0
-Total wall-clock Time (CLOCK_MONOTONIC) = 2.594879 msec
+myreg.rA: 0, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.977791 msec
 
 INT_v3: Predecoded computed goto
-myreg.rA: 0
-myreg.rL: 0
-Total wall-clock Time (CLOCK_MONOTONIC) = 2.346105 msec
+myreg.rA: 0, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.901453 msec
 
 INT_v4: Superevents
-myreg.rA: 0
-myreg.rL: 0
-Total wall-clock Time (CLOCK_MONOTONIC) = 0.882653 msec
+myreg.rA: 0, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.849267 msec
 
 JIT_v1: Pre-generation of static BBs
-myreg.rA: 0
-myreg.rL: 0
-Total wall-clock Time (CLOCK_MONOTONIC) = 1.895280 msec
+myreg.rA: 0, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.086969 msec
 
 JIT_v2: Pre-generation of dynamic BBs
-myreg.rA: 0
-myreg.rL: 0
-Total wall-clock Time (CLOCK_MONOTONIC) = 1.293180 msec
+myreg.rA: 0, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.035738 msec
 
 JIT_v3: Dynamic generation of dynamic BBs
-myreg.rA: 0
-myreg.rL: 0
-Total wall-clock Time (CLOCK_MONOTONIC) = 0.882932 msec
+myreg.rA: 0, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.032007 msec
+
+JIT_v4: Chained Dynamic generation of dynamic BBs
+myreg.rA: 0, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.032038 msec
 
 
 ####################
@@ -150,43 +226,40 @@ senario: 5
 size: 10000
 seed: 3
 prob: 1 9 1 5 5
-rounds: 1
+rounds: 100
 ####################
 
 INT_v1: No optimization
-myreg.rA: 27
-myreg.rL: 0
-Total wall-clock Time (CLOCK_MONOTONIC) = 13.673227 msec
+myreg.rA: 27, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 5.668837 msec
 
 INT_v2: Computed goto
-myreg.rA: 27
-myreg.rL: 0
-Total wall-clock Time (CLOCK_MONOTONIC) = 2.482714 msec
+myreg.rA: 27, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 2.447744 msec
 
 INT_v3: Predecoded computed goto
-myreg.rA: 27
-myreg.rL: 0
-Total wall-clock Time (CLOCK_MONOTONIC) = 2.304968 msec
+myreg.rA: 27, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 2.222601 msec
 
 INT_v4: Superevents
-myreg.rA: 27
-myreg.rL: 0
-Total wall-clock Time (CLOCK_MONOTONIC) = 2.075400 msec
+myreg.rA: 27, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 1.982962 msec
 
 JIT_v1: Pre-generation of static BBs
-myreg.rA: 27
-myreg.rL: 0
-Total wall-clock Time (CLOCK_MONOTONIC) = 2.737984 msec
+myreg.rA: 27, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.089723 msec
 
 JIT_v2: Pre-generation of dynamic BBs
-myreg.rA: 27
-myreg.rL: 0
-Total wall-clock Time (CLOCK_MONOTONIC) = 2.091395 msec
+myreg.rA: 27, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.041485 msec
 
 JIT_v3: Dynamic generation of dynamic BBs
-myreg.rA: 27
-myreg.rL: 0
-Total wall-clock Time (CLOCK_MONOTONIC) = 1.670113 msec
+myreg.rA: 27, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.039055 msec
+
+JIT_v4: Chained Dynamic generation of dynamic BBs
+myreg.rA: 27, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.034351 msec
 
 
 ####################
@@ -194,43 +267,40 @@ senario: 6
 size: 50000
 seed: 1
 prob: 1 9 1 5 5
-rounds: 1
+rounds: 100
 ####################
 
 INT_v1: No optimization
-myreg.rA: 152
-myreg.rL: 0
-Total wall-clock Time (CLOCK_MONOTONIC) = 128.480255 msec
+myreg.rA: 152, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 111.918037 msec
 
 INT_v2: Computed goto
-myreg.rA: 152
-myreg.rL: 0
-Total wall-clock Time (CLOCK_MONOTONIC) = 52.585311 msec
+myreg.rA: 152, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 48.784745 msec
 
 INT_v3: Predecoded computed goto
-myreg.rA: 152
-myreg.rL: 0
-Total wall-clock Time (CLOCK_MONOTONIC) = 46.547819 msec
+myreg.rA: 152, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 43.278242 msec
 
 INT_v4: Superevents
-myreg.rA: 152
-myreg.rL: 0
-Total wall-clock Time (CLOCK_MONOTONIC) = 46.323839 msec
+myreg.rA: 152, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 42.391145 msec
 
 JIT_v1: Pre-generation of static BBs
-myreg.rA: 152
-myreg.rL: 0
-Total wall-clock Time (CLOCK_MONOTONIC) = 46.755877 msec
+myreg.rA: 152, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.741914 msec
 
 JIT_v2: Pre-generation of dynamic BBs
-myreg.rA: 152
-myreg.rL: 0
-Total wall-clock Time (CLOCK_MONOTONIC) = 28.276319 msec
+myreg.rA: 152, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.377928 msec
 
 JIT_v3: Dynamic generation of dynamic BBs
-myreg.rA: 152
-myreg.rL: 0
-Total wall-clock Time (CLOCK_MONOTONIC) = 27.664231 msec
+myreg.rA: 152, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.375628 msec
+
+JIT_v4: Chained Dynamic generation of dynamic BBs
+myreg.rA: 152, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.277355 msec
 
 
 ####################
@@ -238,43 +308,40 @@ senario: 7
 size: 50000
 seed: 2
 prob: 1 9 1 5 5
-rounds: 1
+rounds: 100
 ####################
 
 INT_v1: No optimization
-myreg.rA: 9
-myreg.rL: 6
-Total wall-clock Time (CLOCK_MONOTONIC) = 19.942870 msec
+myreg.rA: 9, myreg.rL: 6
+Total wall-clock Time (CLOCK_MONOTONIC) = 15.194884 msec
 
 INT_v2: Computed goto
-myreg.rA: 9
-myreg.rL: 6
-Total wall-clock Time (CLOCK_MONOTONIC) = 7.018410 msec
+myreg.rA: 9, myreg.rL: 6
+Total wall-clock Time (CLOCK_MONOTONIC) = 6.555438 msec
 
 INT_v3: Predecoded computed goto
-myreg.rA: 9
-myreg.rL: 6
-Total wall-clock Time (CLOCK_MONOTONIC) = 6.587839 msec
+myreg.rA: 9, myreg.rL: 6
+Total wall-clock Time (CLOCK_MONOTONIC) = 5.978090 msec
 
 INT_v4: Superevents
-myreg.rA: 9
-myreg.rL: 6
-Total wall-clock Time (CLOCK_MONOTONIC) = 6.055998 msec
+myreg.rA: 9, myreg.rL: 6
+Total wall-clock Time (CLOCK_MONOTONIC) = 5.722097 msec
 
 JIT_v1: Pre-generation of static BBs
-myreg.rA: 9
-myreg.rL: 6
-Total wall-clock Time (CLOCK_MONOTONIC) = 11.534131 msec
+myreg.rA: 9, myreg.rL: 6
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.420776 msec
 
 JIT_v2: Pre-generation of dynamic BBs
-myreg.rA: 9
-myreg.rL: 6
-Total wall-clock Time (CLOCK_MONOTONIC) = 8.279043 msec
+myreg.rA: 9, myreg.rL: 6
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.190180 msec
 
 JIT_v3: Dynamic generation of dynamic BBs
-myreg.rA: 9
-myreg.rL: 6
-Total wall-clock Time (CLOCK_MONOTONIC) = 5.754564 msec
+myreg.rA: 9, myreg.rL: 6
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.172645 msec
+
+JIT_v4: Chained Dynamic generation of dynamic BBs
+myreg.rA: 9, myreg.rL: 6
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.182010 msec
 
 
 ####################
@@ -282,43 +349,40 @@ senario: 8
 size: 50000
 seed: 3
 prob: 1 9 1 5 5
-rounds: 1
+rounds: 100
 ####################
 
 INT_v1: No optimization
-myreg.rA: 6
-myreg.rL: 0
-Total wall-clock Time (CLOCK_MONOTONIC) = 33.858794 msec
+myreg.rA: 6, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 25.780819 msec
 
 INT_v2: Computed goto
-myreg.rA: 6
-myreg.rL: 0
-Total wall-clock Time (CLOCK_MONOTONIC) = 12.051933 msec
+myreg.rA: 6, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 11.343278 msec
 
 INT_v3: Predecoded computed goto
-myreg.rA: 6
-myreg.rL: 0
-Total wall-clock Time (CLOCK_MONOTONIC) = 15.933008 msec
+myreg.rA: 6, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 10.026728 msec
 
 INT_v4: Superevents
-myreg.rA: 6
-myreg.rL: 0
-Total wall-clock Time (CLOCK_MONOTONIC) = 15.112095 msec
+myreg.rA: 6, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 8.910866 msec
 
 JIT_v1: Pre-generation of static BBs
-myreg.rA: 6
-myreg.rL: 0
-Total wall-clock Time (CLOCK_MONOTONIC) = 14.162045 msec
+myreg.rA: 6, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.449707 msec
 
 JIT_v2: Pre-generation of dynamic BBs
-myreg.rA: 6
-myreg.rL: 0
-Total wall-clock Time (CLOCK_MONOTONIC) = 10.291936 msec
+myreg.rA: 6, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.212956 msec
 
 JIT_v3: Dynamic generation of dynamic BBs
-myreg.rA: 6
-myreg.rL: 0
-Total wall-clock Time (CLOCK_MONOTONIC) = 8.510986 msec
+myreg.rA: 6, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.200764 msec
+
+JIT_v4: Chained Dynamic generation of dynamic BBs
+myreg.rA: 6, myreg.rL: 0
+Total wall-clock Time (CLOCK_MONOTONIC) = 0.194325 msec
 ```
 ## Measurement Script - `run_interpreter.sh`
 

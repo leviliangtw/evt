@@ -1,7 +1,13 @@
 #!/bin/bash
 
-for i in {3..8}; do
-	./main.out ${i};
+ROUNDS=1
+
+if [ $# -eq 1 ]; then
+	ROUNDS=$1
+fi
+
+for i in {1..8}; do
+	./main.out ${ROUNDS} ${i};
 done;
 
 exit 0

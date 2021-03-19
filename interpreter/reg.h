@@ -8,7 +8,7 @@
 struct reg
 {
     /* data */
-    char * rIP;
+    unsigned char * rIP;
     int32_t rA;
     int32_t rL;
 } typedef reg;
