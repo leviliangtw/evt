@@ -52,5 +52,7 @@ Mkfile.old
 dkms.conf
 
 # Others
-core*
 .gdb_history
+peda-session*
+core*
+log*

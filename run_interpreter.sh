@@ -8,7 +8,7 @@ if [ $# -eq 3 ]; then
 fi
 
 if [ $# -eq 0 ]; then
-	echo "$ ./perfmyinterpreter <senario> <interpreter no> <rounds>"
+	echo "$ ./run_interpreter.sh <senario> <interpreter no> <rounds>"
 	exit 1
 elif [ $# -gt 1 ]; then
 	echo "Senario: $1"

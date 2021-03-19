@@ -11,7 +11,7 @@ SRC = $(wildcard ${DIR_GEN}/*.c ${DIR_INT}/*.c ${DIR_BT}/*.c)
 
 CC = gcc
 # CFLAGS = -g -Wall -I${DIR_GEN} -I${DIR_INT}
-CFLAGS = -g -I${DIR_GEN} -I${DIR_INT} -I${DIR_BT} -static
+CFLAGS = -g -I${DIR_GEN} -I${DIR_INT} -I${DIR_BT}
 
 ALL:$(BIN_TGT)
 

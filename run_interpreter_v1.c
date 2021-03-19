@@ -4,7 +4,7 @@
 #include <string.h>
 #include "generator/gen.h"
 #include "interpreter/reg.h"
-#include "interpreter/interpreter_v1.h"
+#include "interpreter/interpreter.h"
 
 int main(int argc, char *argv[]){
     // initialize the register and senario
