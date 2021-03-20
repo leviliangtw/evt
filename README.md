@@ -40,20 +40,26 @@
 * `$ valgrind --tool=memcheck --leak-check=full ./main.out`
 
 ## Interpreters
-* interpreter_v1: No optimization
-* interpreter_v2: **Indirect threaded** interpretation
-* interpreter_v3: **Predecoding** with **direct threaded** interpretation
-* interpreter_v4: Reducing the number of jumps by using "**superevents**" (combinations of 2 original instructions in a row).
+* `interpreter_v1`: No optimization
+* `interpreter_v2`: **Indirect threaded** interpretation
+* `interpreter_v3`: **Predecoding** with **direct threaded** interpretation
+* `interpreter_v4`: Reducing the number of jumps by using "**superevents**" (combinations of 2 original instructions in a row).
 
 ## Binary Translators
-* jit_v1: Pre-generation of Static BBs, Direct Mapped Code Cache
-* jit_v2: Pre-generation of Dynamic BBs, Direct Mapped Code Cache
-* jit_v3: Dynamic Generation of Dynamic BBs, Direct Mapped Code Cache
+* `jit_v1`: Pre-generation of **Static BBs**, Direct Mapped Code Cache
+* `jit_v2`: Pre-generation of **Dynamic BBs**, Direct Mapped Code Cache
+* `jit_v3`: **Dynamic Generation** of Dynamic BBs, Direct Mapped Code Cache
+* `jit_v4`: **Chaining** Dynamic Generation of Dynamic BBs, Direct Mapped Code Cache
+
+## TODO List
+* `jit_v5`: Build **superblocks**
+* `jit_v6`: Develop better strategy for superblocks, such as **profiling** and **loop unrolling**
+* Others: Code cache **invalidation** and **eviction**, **coarse-grained** FIFO code cache, **unchaining** translated BBs
 
 ## Measurement Approaches
-* [Measurement Script - `main.sh`](#Measurement-Script---mainsh): 
+1. [Measurement Script - `main.sh`](#Measurement-Script---mainsh): 
    * `clock_gettime(CLOCK_MONOTONIC, &time);`
-* [Measurement Script - `run_interpreter.sh`](#Measurement-Script---run_interpretersh): 
+2. [Measurement Script - `run_interpreter.sh`](#Measurement-Script---run_interpretersh): 
    * `$ sudo perf stat -r 1000 \<target\>`
 
 ## Measurement Script - `main.sh`

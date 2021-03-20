@@ -111,6 +111,7 @@ int main(int argc, char *argv[]) {
     printf("Total wall-clock Time (CLOCK_MONOTONIC) = %f msec\n", wtime/rounds*1000);
     printf("\n");
 
+    /* The performance sucks */
     // clock_gettime(CLOCK_MONOTONIC, &start);
     // machine_reg = myreg; 
     // for(i = 0; i < rounds; i++){

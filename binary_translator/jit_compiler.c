@@ -210,7 +210,7 @@ void jit_v3(char *buf, int size, reg *myreg) {
     free(tt);
 }
 
-/* Chained Dynamic Generation of Dynamic BBs, Direct Mapped Code Cache */
+/* Chaining Dynamic Generation of Dynamic BBs, Direct Mapped Code Cache */
 void jit_v4(char *buf, int size, reg *myreg) {
     
     /* Dynamic Translation Table & Code Cache & Chained_Table */
