@@ -1,7 +1,7 @@
-# VT-Emulation
-* VT-Emulation stands for the emulation of Virtualization Techniques. 
-* The tasks of this project aim to implement efficient execution of bytecode. 
-* Very simple V-ISA.
+# evt
+* Emulation of Virtualization Techniques. 
+* This project aims to implement efficient execution of bytecode. 
+* With very simple V-ISA.
 
 ## Infrastrure
 * 3 registers: IP (instruction pointer), A (accumulator), and L (loop counter)
